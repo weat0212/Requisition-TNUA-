@@ -1,0 +1,209 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>國立臺北藝術大學 展演藝術中心-場地租用申請表</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="wrapper">
+    <div id="header">
+        <img class = title src="images/title.png"></img><br/>
+        <p class="copy">展演藝術中心 場地租用申請表</p>
+        <ul id="navi">
+            <!-- 導覽列從此開始 -->
+                <li id="navi_01"><a href="index.html">首頁</a></li>
+                <li id="navi_02"><a></a></li>
+                <li id="navi_03"><a></a></li>
+                <li id="navi_04"><a></a></li>
+                <li id="navi_05"><a href="contactus.html">聯絡我們</a></li>
+            <!-- 導覽列到此為止 -->
+        </ul>
+    </div>
+
+
+<div id="contents">
+<form name="form" action="http://127.0.0.1/comment/comment.php" method="POST" accept-charset="UTF-8" align="center">		
+        <div class="detail_box clearfix">
+		<div class="link_box">
+			<!-- <h3>服務專區</h3> -->
+            
+            <ul>
+				<li>
+                    申請日期:<input type="date" name="applyDate" size="30"/>&emsp;
+                    申請單位:<input type="text" name="applyDept" size="30"/><br/><br/>
+                    申請聯絡人:<input type="text" name="contact" size="30"/>&emsp;
+                    申請單位主管:<input type="text" name="DeptSupv" size="30"/>
+                    <br/>
+				</li>
+                
+                <li>
+                    地址:<input type="text" name="address" size="30"/>&emsp;
+                    電話:<input type="text" name="phone" size="30"/><br/><br/>
+					申請單位聯絡人e-mail:<input type="text" name="mail" size="30"/><br/>
+				</li><br/>
+                
+                <form>
+                    （1）申請場地：
+                    <select name="aplyLoca">
+                    　<option value="concert">音樂廳</option>
+                    　<option value="drama">戲劇廳</option>
+                    　<option value="dancehall">舞蹈廳</option>
+                    </select>
+                    ，參與共<input type="text" name="numofParts" size="3"/>人
+                </form>
+
+				<li>
+                    （2）申請項目：
+                    <input name="usedfor" type=radio value="f1">藝文展演活動
+                    <input name="usedfor" type=radio value="f2">專為錄音綠影租用
+                    <input name="usedfor" type=radio value="f3">非藝文展演活動
+                </li>
+                
+                <li>
+                    （3）租用裝台排練時段（請填Ａ）、租用演出時段（請填Ｂ），租用超過三天請另附詳細租用時段表<br/><br/>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>
+                                    &emsp;&emsp;&emsp;&emsp;
+                                    日期
+                                </th>
+                                <th>
+                                    輔助時段
+                                    08:00~09:00
+                                </th>
+                                <th>
+                                    上午時段
+                                    09:00~12:00
+                                </th>
+                                <th>
+                                    輔助時段
+                                    12:00~13:00
+                                </th>
+                                <th>
+                                    下午時段
+                                    13:00~17:00
+                                </th>
+                                <th>
+                                    輔助時段
+                                    17:00~18:00
+                                </th>
+                                <th>
+                                    晚上時段
+                                    18:00~22:00
+                                </th>
+                                <th>
+                                    輔助時段
+                                    22:00~24:00
+                                </th>
+                                <th>
+                                    輔助時段
+                                    00:00~02:00
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    &emsp;&emsp;&emsp;
+                                    &emsp;&emsp;&emsp;
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    &emsp;&emsp;&emsp;
+                                    &emsp;&emsp;&emsp;
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    &emsp;&emsp;&emsp;
+                                    &emsp;&emsp;&emsp;
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <!-- ToDo:Time Table -->
+                </li>
+                
+                <li>
+                    （4）藝文展演與非藝文展演活動，自行安排錄音綠影（需另收2000元）：
+                    <input name="arrange" type=radio value="bySelf">自行安排；
+                    <input name="arrange" type=radio value="noArr">沒有安排<br/><br/>
+                    （5）演出時間：
+                    <input type="datetime-local" name="stfromDate" size="30"/> 至
+                    <input type="datetime-local" name="sttoDate" size="30"/>
+                    <br/><br/>
+                    （6）拆台時間：
+                    <input type="datetime-local" name="endfromDate" size="30"/> 至
+                    <input type="datetime-local" name="endtoDate" size="30"/>
+                    <br/><br/>
+                    （7）活動內容：（節目名稱及簡介，需付企劃書詳細說明）<br/>
+                    <textarea name="actComment" rows="5" cols="33"></textarea><br/><br/>
+                    
+                    （8）附件：
+                    <input name="f9" type=checkbox value="showPaper">演出企劃書
+                    <input name="f10" type=checkbox value="showAbs">演出單位簡介
+                    <input name="f11" type=checkbox value="rentTT">租用時段表
+                    <input name="f12" type=checkbox value="showTT">演出時間表
+                    <input name="f13" type=checkbox value="videoData">視聽資料
+                    <input name="f14" type=checkbox value="other">其他<br/><br/>
+                    <input type="file" id="input"><br/><br/>
+
+                </li>
+
+                <li>
+                    發票抬頭：<input type="text" name="recipt" size="30"/>&emsp;
+                    統一編號：<input type="text" name="compId" size="30"/><br/><br/>
+                    保證金退款：<br/><br/>
+                    <input type="text" name="return" size="15"/>銀行/郵局&emsp;<input type="text" name="branch" size="15"/>分行，<br/><br/>
+                    帳號：<input type="text" name="account" size="30"/>&emsp;
+                    戶名：<input type="text" name="accountName" size="30"/><br/><br/>
+                    匯款帳戶：中國信託忠孝分行，帳號185350003083&emsp;戶名：國立台北大學401專戶
+                </li><br/>
+
+					<input type="reset" value="清除表單">
+				    <input type="submit" align="right" value="送出" >
+                </br>
+
+
+			</ul>
+		</div>
+        </div>
+</div>
+</form>
+
+<footer id="footer">
+    <p>112 台北市北投區學園路一號 國立台北藝術大學 展演藝術中心</p>
+    <p>Tel:(02)2893-8163</p>
+</footer>
+
+</body>
+</html>
