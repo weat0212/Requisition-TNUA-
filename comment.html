@@ -8,11 +8,11 @@
 
 <body id="wrapper">
     <div id="header">
-        <img class = title src="images/title.png"></img><br/>
+        <img class=title src="images/title.png"/><br/>
         <p class="copy">展演藝術中心 場地租用申請表</p>
         <ul id="navi">
             <!-- 導覽列從此開始 -->
-                <li id="navi_01"><a href="index.html">首頁</a></li>
+                <li id="navi_01"><a href="comment.html">首頁</a></li>
                 <li id="navi_02"><a></a></li>
                 <li id="navi_03"><a></a></li>
                 <li id="navi_04"><a></a></li>
@@ -30,15 +30,7 @@
                 <ul>
                     <li>
                         申請日期:<input type="date" name="applyDate" size="30"/>&emsp;
-<<<<<<< HEAD
-<<<<<<< HEAD
                         申請單位:<input type="text" name="applicant" size="30"/><br/><br/>
-=======
-                        申請單位:<input type="text" name="applyDept" size="30"/><br/><br/>
->>>>>>> 58fdfbc4449c7b2171628a08ff3ec7149e99e624
-=======
-                        申請單位:<input type="text" name="applyDept" size="30"/><br/><br/>
->>>>>>> 58fdfbc4449c7b2171628a08ff3ec7149e99e624
                         申請聯絡人:<input type="text" name="contact" size="30"/>&emsp;
                         申請單位主管:<input type="text" name="DeptSupv" size="30"/>
                         <br/>
@@ -46,8 +38,8 @@
 
                     <li>
                         地址:<input type="text" name="address" size="30"/>&emsp;
-                        電話:<input type="text" name="phone" size="30"/><br/><br/>
-                        申請單位聯絡人e-mail:<input type="text" name="mail" size="30"/><br/>
+                        電話:<input type="text" name="phone" size="30" minlength="9" maxlength="10"/><br/><br/>
+                        申請單位聯絡人e-mail:<input type="email" name="mail" size="30"/><br/>
                     </li><br/>
 
                     <form>
@@ -57,7 +49,7 @@
                             　<option value="drama">戲劇廳</option>
                             　<option value="dancehall">舞蹈廳</option>
                         </select>
-                        ，參與共<input type="text" name="numofParts" size="3"/>人
+                        ，參與共<input type="number" name="numofParts" min="1" max="150"/>人
                     </form>
 
                     <li>
@@ -73,7 +65,6 @@
                             <thead>
                             <tr>
                                 <th>
-                                    &emsp;&emsp;&emsp;&emsp;
                                     日期
                                 </th>
                                 <th>
@@ -110,53 +101,44 @@
                                 </th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    &emsp;&emsp;&emsp;
-                                    &emsp;&emsp;&emsp;
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                            <body>
+                            <tr id="rentaldat1">
+                                <td><input name = "dat1" type="date"></td>
+                                <td><input type="text" name="assist1" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist2" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist3" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist4" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist5" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist6" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist7" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist8" size="1" maxlength="1"/></td>
                             </tr>
 
-                            <tr>
-                                <td>
-                                    &emsp;&emsp;&emsp;
-                                    &emsp;&emsp;&emsp;
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                            <tr id="rentaldat2">
+                                <td><input name = "dat2" type="date"></td>
+                                <td><input type="text" name="assist1" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist2" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist3" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist4" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist5" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist6" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist7" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist8" size="1" maxlength="1"/></td>
                             </tr>
 
-                            <tr>
-                                <td>
-                                    &emsp;&emsp;&emsp;
-                                    &emsp;&emsp;&emsp;
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                            <tr id="rentaldat3">
+                                <td><input name = "dat3" type="date"></td>
+                                <td><input type="text" name="assist1" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist2" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist3" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist4" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist5" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist6" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist7" size="1" maxlength="1"/></td>
+                                <td><input type="text" name="assist8" size="1" maxlength="1"/></td>
                             </tr>
 
-                            </tbody>
+                            </body>
                         </table>
                         <!-- ToDo:Time Table -->
                     </li>
@@ -190,7 +172,7 @@
                     <li>
                         發票抬頭：<input type="text" name="recipt" size="30"/>&emsp;
                         統一編號：<input type="text" name="compId" size="30"/><br/><br/>
-                        保證金退款：<br/><br/>
+                        <font size="3">保證金退款：</font><br/><br/>
                         <input type="text" name="return" size="15"/>銀行/郵局&emsp;<input type="text" name="branch" size="15"/>分行，<br/><br/>
                         帳號：<input type="text" name="account" size="30"/>&emsp;
                         戶名：<input type="text" name="accountName" size="30"/><br/><br/>
