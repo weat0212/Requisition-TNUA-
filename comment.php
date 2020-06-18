@@ -50,6 +50,7 @@
             if(!isset($_POST['DeptSupv'])){
             echo "申請單位主管輸入錯誤<br/>";
             }else{echo"";}
+            
 		}
 
 		else{
