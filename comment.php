@@ -34,8 +34,10 @@
   </div>
 
 <div id="contents">
-<?php   if(!isset($_POST['applyDate'])||!isset($_POST['applicant'])||!isset($_POST['contact'])||!isset($_POST['DeptSupv'])){
-            #ToDo:更改錯誤變數訊息
+<?php
+        //表格輸入錯誤情況
+        if(!isset($_POST['applyDate'])||!isset($_POST['applicant'])||!isset($_POST['contact'])||!isset($_POST['DeptSupv'])){
+
             if(!isset($_POST['applyDate'])){
             echo "申請日期輸入錯誤<br/>";
             }else{echo"";}
@@ -60,17 +62,61 @@
                     echo '<h2>'.$_POST['contact'].'，您已成功上傳申請表單!<br/></h2>';
                     echo '<br/>';
                 }else{
-                    echo "姓名變數錯誤";
+                    echo "申請聯絡人輸入錯誤";
             }
+?>
+
+//ToDo:排演日及演出日AB僅能出現一次
+<?php
+    $A = 0;
+    $B = 0;
+    if(isset($_POST['dat1'])){
+        //check if A/B only input once
+        for($i=1, $i<9, $i++){
+            if(($_POST['dat1assist'.(string)$i] == 'A'||$_POST['dat1assist'.(string)$i] == 'a')){
+                $A += 1;
+            }else{
+                if(($_POST['dat1assist'.((string)$i] == 'B'||$_POST['dat1assist'.((string)$i] == 'b')){
+                    $B += 1;
+                }
+            }
+        }
+        if($A==1 || $B==1){
+            break;
+        }else{
+            //缺值
+            echo"租借表單填寫缺值或多輸入值"
+        }
+    }else{
+        echo"未填寫租用裝台排練時段（請填Ａ）、租用演出時段（請填Ｂ）"
+    }
+
+    $A = 0;
+    $B = 0;
+    if(isset($_POST['dat2'])){
+
+    }
+
+    $A = 0;
+    $B = 0;
+    if(isset($_POST['dat3'])){
+
+    }
+?>
+
+//ToDo:檢查正則式
+<?php
+    $retaldatA =
 
 ?>
 
-       <div class="detail_box clearfix">
+        //表格輸入皆正確的情況
+        <div class="detail_box clearfix">
 			<p class="photo">
                 <img src="images/thanKU.webp" width="250" height="200" alt="謝謝你">
             </p>
             <p class="text">
-			<?php
+            <?php
 			if(isset($_POST['contact'])){
 				echo '<font size=4>以下是您的基本資料，請確認是否有錯誤：</font><br/><br/><br/>';
 				echo '<li>申請聯絡人：';
@@ -101,8 +147,8 @@
 	    }
 	    }
 		    ?>
-		    </p>
-       </div>
+	    </p>
+        </div>
 </div>
 </body></html>
 

@@ -1,3 +1,4 @@
+//Replace by PHP ???
 // 漢字
 var reg = new RegExp("[\\u4E00-\\u9FFF]+","g");
 
