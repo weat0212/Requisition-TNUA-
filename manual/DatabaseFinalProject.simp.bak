@@ -17,7 +17,7 @@
       </counter>
       <counter>
         <item-type type-id="erd-chen-attribute" type="ErdChenAttribute" />
-        <value>12</value>
+        <value>23</value>
       </counter>
       <counter>
         <item-type type-id="erd-entity" type="ErdEntity" />
@@ -27,7 +27,7 @@
     <entity-ids>
       <counter>
         <item-type type-id="group" type="AbstractElementGroup" />
-        <value>640</value>
+        <value>847</value>
       </counter>
       <counter>
         <item-type type-id="erd-chen-entity" type="ErdChenEntity" />
@@ -39,23 +39,31 @@
       </counter>
       <counter>
         <item-type type-id="erd-chen-participation" type="ErdChenParticipation" />
-        <value>6</value>
+        <value>9</value>
       </counter>
       <counter>
         <item-type type-id="erd-chen-attribute" type="ErdChenAttribute" />
-        <value>13</value>
+        <value>24</value>
       </counter>
       <counter>
         <item-type type-id="erd-chen-attribute-connector" type="ErdChenAttributeConnector" />
-        <value>35</value>
+        <value>39</value>
       </counter>
       <counter>
         <item-type type-id="universal-connector" type="UniversalConnector" />
-        <value>5</value>
+        <value>6</value>
       </counter>
       <counter>
         <item-type type-id="erd-entity" type="ErdEntity" />
         <value>5</value>
+      </counter>
+      <counter>
+        <item-type type-id="comment" type="UmlComment" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="comment-connector" type="UmlCommentConnector" />
+        <value>2</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -112,7 +120,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="chen-entity-relationship" id="p4b76648e83e04648a78efd9b9e242a31_448529257" name="ChenERDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="100,-130">
+      <diagram type="chen-entity-relationship" id="p4b76648e83e04648a78efd9b9e242a31_448529257" name="ChenERDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-154,-220">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -124,12 +132,12 @@
           </authors>
           <description />
           <creation-date>06/18/2020 17:10:49</creation-date>
-          <change-date>06/18/2020 17:38:25</change-date>
+          <change-date>06/19/2020 21:52:48</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
         <abstract-items>
-          <item id="77e05ae861a34978bcd937140d95451c" cid="ENT001" type="erd-chen-entity" name="申請單位資料" style-class="Yellow Outline" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:10:51">
+          <item id="77e05ae861a34978bcd937140d95451c" cid="ENT001" type="erd-chen-entity" name="申請單位" style-class="Yellow Outline" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:10:51">
             <style class="Yellow Outline" />
             <erd-chen-entity type="standard" />
           </item>
@@ -142,29 +150,51 @@
             <erd-chen-entity type="standard" />
           </item>
           <item id="6009b0b46d764d11b3cc8dcd630b3827" cid="PAR001" type="erd-chen-participation" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:13:14" from="77e05ae861a34978bcd937140d95451c" to="84c49188d42f4f4da3a55fbb7fa2a2f3">
-            <erd-chen-participation type="standard" multiplicity="" />
+            <erd-chen-participation type="standard" multiplicity="N" />
           </item>
           <item id="20e0625f77dc48ffb8eb006516c56330" cid="PAR002" type="erd-chen-participation" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:13:17" from="84c49188d42f4f4da3a55fbb7fa2a2f3" to="226abd45d5e24f6bb07ac036fe954d33">
-            <erd-chen-participation type="standard" multiplicity="" />
+            <erd-chen-participation type="standard" multiplicity="M" />
           </item>
           <item id="676879a786d14218a9f9f98f9a57bf86" cid="ENT003" type="erd-chen-entity" name="台北藝術大學" style-class="Yellow Outline" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:14:47">
             <style class="Yellow Outline" />
             <erd-chen-entity type="standard" />
           </item>
-          <item id="1376e554c6714766877130ef70ac0d2c" cid="REL002" type="erd-chen-relationship" name="匯款" style-class="Red Outline" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:14:56">
+          <item id="1376e554c6714766877130ef70ac0d2c" cid="REL002" type="erd-chen-relationship" name="核准" style-class="Red Outline" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:14:56">
             <style class="Red Outline" />
             <erd-chen-relationship type="standard" />
           </item>
           <item id="cc3c77c9cdf54018bd756589623a50b8" cid="PAR003" type="erd-chen-participation" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:15:38" from="77e05ae861a34978bcd937140d95451c" to="1376e554c6714766877130ef70ac0d2c">
-            <erd-chen-participation type="standard" multiplicity="" />
+            <erd-chen-participation type="standard" multiplicity="1" />
           </item>
           <item id="21488aa69adc47ffa9ed204bc3efba1a" cid="PAR004" type="erd-chen-participation" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:15:56" from="676879a786d14218a9f9f98f9a57bf86" to="1376e554c6714766877130ef70ac0d2c">
-            <erd-chen-participation type="standard" multiplicity="" />
+            <erd-chen-participation type="standard" multiplicity="N" />
           </item>
           <item id="70e29eba782c4ae1beafe800f9228da3" cid="ATT001" type="erd-chen-attribute" name="日期" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:16:12">
             <erd-chen-attribute type="standard" />
           </item>
           <item id="di1758cba2414b42d9b3ecf957b726e6fa9086" cid="ATT001" type="erd-chen-attribute" name="聯絡人" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:16:12">
+            <style style-name="Default" shadow-type="smooth" shadow-offset="1,1" shadow-visible="true" shadow-color="#32000000" gloss-effect="true" wrap-name-text="true" wrap-other-text="true" padding="1" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+              <text-style type="name" use-defaults="false" color="#FF000000" font="Verdana;10;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
+              <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
+              <text-style type="text" use-defaults="false" color="#FF000000" font="Verdana;9;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
+              <text-style type="tagged-value" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
+              <text-style type="stereotype" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
+              <background type="forward-diagonal" color="#FFFFFFFF" color2="#FFEBEBEB" />
+              <border color="#FF000000" width="1" dash-style="Solid" />
+              <label-connector color="#80000000" width="1" dash-style="Dash" />
+              <alternate-styles>
+                <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="1,1" shadow-color="#32000000" gloss-effect="true" wrap-name-text="true" padding="1" margin="1" glow-color="#FFFFFFFF" accuracy="0.9">
+                  <text-style type="name" use-defaults="false" color="#FFFFFFFF" font="Verdana;10;B" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
+                  <text-style type="part-header" use-defaults="false" color="#FF1E1E1E" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
+                  <text-style type="text" use-defaults="false" color="#FFFFFFFF" font="Verdana;9;" horizontal-alignment="left" vertical-alignment="center" shadow="false" />
+                  <text-style type="tagged-value" use-defaults="false" color="#FFFFFFFF" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
+                  <text-style type="stereotype" use-defaults="false" color="#FFFFFFFF" font="Verdana;9;I" horizontal-alignment="center" vertical-alignment="center" shadow="false" />
+                  <background type="solid" color="#FF2B508B" color2="#FF87CEFA" />
+                  <border color="#FF2B508B" width="1" dash-style="Solid" />
+                  <label-connector color="#FF000000" width="1" dash-style="Solid" />
+                </alternate-style>
+              </alternate-styles>
+            </style>
             <erd-chen-attribute type="standard" />
           </item>
           <item id="22cfd7a93a654cf2b7b6175a06f1702b" cid="ATC001" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:16:53" from="77e05ae861a34978bcd937140d95451c" to="70e29eba782c4ae1beafe800f9228da3" />
@@ -200,7 +230,7 @@
             <erd-chen-attribute type="standard" />
           </item>
           <item id="did59da362a84f4f518602ddb73e793cef5435" cid="ATT002" type="erd-chen-attribute" name="租用時段" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:18:01">
-            <erd-chen-attribute type="standard" />
+            <erd-chen-attribute type="multi-value" />
           </item>
           <item id="di8729fabcd3ae43d68cbcf0c3146129145047" cid="ATT002" type="erd-chen-attribute" name="錄音錄影" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:18:01">
             <erd-chen-attribute type="standard" />
@@ -226,13 +256,13 @@
           <item id="55fd11b2a4314337a277ad7cc1b34993" cid="ATC015" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:24:07" from="226abd45d5e24f6bb07ac036fe954d33" to="di9280974aa92747368d09ca67be3575365805" />
           <item id="dcf5477bae22464a8ef1e6ca31fb952e" cid="ATC016" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:24:13" from="226abd45d5e24f6bb07ac036fe954d33" to="97d950c8b6504e7492715cd87cd6068c" />
           <item id="c81dc96019db4e4da4bde932ed03ab37" cid="ATT004" type="erd-chen-attribute" name="日期" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:25:10">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="diab02164e065148878cd69fa4cefd4d414983" cid="ATT004" type="erd-chen-attribute" name="租用裝台排練時段" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:25:10">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="dib22b523417bb4069a98a76539674bf9f8330" cid="ATT004" type="erd-chen-attribute" name="租用演出時段" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:25:10">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="f5ca12a2c48a4885b910887fe1371276" cid="ATC017" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:26:44" from="did59da362a84f4f518602ddb73e793cef5435" to="c81dc96019db4e4da4bde932ed03ab37" />
           <item id="9f23385442e5485aa5ce5240e374c7cb" cid="ATC018" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:26:58" from="did59da362a84f4f518602ddb73e793cef5435" to="diab02164e065148878cd69fa4cefd4d414983" />
@@ -240,7 +270,7 @@
           <item id="c90f65627db34893be1485c0c85156a8" cid="ATT005" type="erd-chen-attribute" name="發票抬頭" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:27:53">
             <erd-chen-attribute type="standard" />
           </item>
-          <item id="die2d4e04d5da3485b93ea575ac6b95c653415" cid="ATT005" type="erd-chen-attribute" name="統一編號" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:27:53">
+          <item id="6d206a9e4e10413bb0a005291b55f4f4" cid="ATT017" type="erd-chen-attribute" name="核准單位" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 21:27:51">
             <erd-chen-attribute type="standard" />
           </item>
           <item id="diae66b55d8c034123a8cd61ea31bc1afc2994" cid="ATT005" type="erd-chen-attribute" name="保證金退款" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:27:53">
@@ -251,36 +281,58 @@
             <erd-chen-attribute type="standard" />
           </item>
           <item id="c253d8248cb246babffaf99f59631c97" cid="ATT006" type="erd-chen-attribute" name="銀行/郵局" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:29:58">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="674e725b6d6a4890ac37c8862d4e3e46" cid="ATT007" type="erd-chen-attribute" name="分行" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:30:18">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="841ceb656985423a93a91f3aef4cc670" cid="ATC020" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:30:35" from="diae66b55d8c034123a8cd61ea31bc1afc2994" to="c253d8248cb246babffaf99f59631c97" />
           <item id="bd2e885e90e04f22b13e1086df893383" cid="ATC021" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:30:38" from="diae66b55d8c034123a8cd61ea31bc1afc2994" to="674e725b6d6a4890ac37c8862d4e3e46" />
           <item id="6a1a64a414e644ef9d9ffacb5ff429a6" cid="ATC023" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:30:59" from="diae66b55d8c034123a8cd61ea31bc1afc2994" to="1657698f1a1b4ee28be7c8dcf6ae6793" />
-          <item id="cffd6ddaad8c4e51ae0e5b41f57d87ed" cid="ATC026" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:32:18" from="1376e554c6714766877130ef70ac0d2c" to="die2d4e04d5da3485b93ea575ac6b95c653415" />
+          <item id="cffd6ddaad8c4e51ae0e5b41f57d87ed" cid="ATC026" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:32:18" from="1376e554c6714766877130ef70ac0d2c" to="4ea3236d58a44955bc56d1ba531b21ca" />
           <item id="870e3f1bbc5a4783882fcae45e2f116c" cid="ATC027" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:32:37" from="1376e554c6714766877130ef70ac0d2c" to="diae66b55d8c034123a8cd61ea31bc1afc2994" />
           <item id="e76f5d0e1efd4a66b3fe180f02f2449f" cid="ATC028" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:32:50" from="diae66b55d8c034123a8cd61ea31bc1afc2994" to="die155ec8ab5884437aed02a94da9c92b24087" />
           <item id="69320635884447b393e7e5b2c0b0e83c" cid="ATC029" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:32:57" from="1376e554c6714766877130ef70ac0d2c" to="c90f65627db34893be1485c0c85156a8" />
           <item id="1657698f1a1b4ee28be7c8dcf6ae6793" cid="ATT009" type="erd-chen-attribute" name="帳號" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:35:09">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="die155ec8ab5884437aed02a94da9c92b24087" cid="ATT009" type="erd-chen-attribute" name="戶名" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:35:09">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="5738bdb82f0545ac84638676cada7952" cid="ATT011" type="erd-chen-attribute" name="銀行名稱" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:37:04">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="1cb28f7625564b2da1ae812bcf693528" cid="ATT012" type="erd-chen-attribute" name="帳號" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:37:49">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="dif491668822504912a03c5d6cff3d74647121" cid="ATT012" type="erd-chen-attribute" name="學校戶名" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:37:49">
-            <erd-chen-attribute type="multi-value" />
+            <erd-chen-attribute type="standard" />
           </item>
           <item id="33632152624f487f81f3b26b6093947c" cid="ATC032" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:38:12" from="296bd3453f284876bfc92a868cebc6b6" to="5738bdb82f0545ac84638676cada7952" />
           <item id="3c75ed79052e40959a8aad5c5817c5dc" cid="ATC033" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:38:16" from="296bd3453f284876bfc92a868cebc6b6" to="1cb28f7625564b2da1ae812bcf693528" />
           <item id="f38258b50a36465c96dc58a6a024b0ae" cid="ATC034" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/18/2020 17:38:24" from="296bd3453f284876bfc92a868cebc6b6" to="dif491668822504912a03c5d6cff3d74647121" />
+          <item id="4ea3236d58a44955bc56d1ba531b21ca" cid="ATT015" type="erd-chen-attribute" name="統一編號" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 21:26:03">
+            <erd-chen-attribute type="derived" />
+          </item>
+          <item id="287ac94701c34433beeb998e0a56be00" cid="ATC036" type="erd-chen-attribute-connector" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 21:28:09" from="6d206a9e4e10413bb0a005291b55f4f4" to="676879a786d14218a9f9f98f9a57bf86" />
+          <item id="12c8681c743640c7a54afaec7e5396bc" cid="ATT020" type="erd-chen-attribute" name="業務組" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 21:29:32">
+            <erd-chen-attribute type="standard" />
+          </item>
+          <item id="5542431cb8b54e0db21f2afd688b4792" cid="ATT021" type="erd-chen-attribute" name="技術組" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 21:29:47">
+            <erd-chen-attribute type="standard" />
+          </item>
+          <item id="di2f7cbf44a1c24ce2a2afd9e31e8906958745" cid="ATT021" type="erd-chen-attribute" name="中心主任" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 21:29:47">
+            <erd-chen-attribute type="standard" />
+          </item>
+          <item id="3549508477d048acac4732454011ad34" cid="PAR006" type="erd-chen-participation" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 21:30:23" from="6d206a9e4e10413bb0a005291b55f4f4" to="12c8681c743640c7a54afaec7e5396bc">
+            <erd-chen-participation type="standard" multiplicity="" />
+          </item>
+          <item id="b11b7befa9c246e8a7b6eb0a194f218c" cid="PAR007" type="erd-chen-participation" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 21:30:27" from="6d206a9e4e10413bb0a005291b55f4f4" to="5542431cb8b54e0db21f2afd688b4792">
+            <erd-chen-participation type="standard" multiplicity="" />
+          </item>
+          <item id="674edccab3bb4340bccbde473c4d5f63" cid="PAR008" type="erd-chen-participation" name="" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 21:30:30" from="6d206a9e4e10413bb0a005291b55f4f4" to="di2f7cbf44a1c24ce2a2afd9e31e8906958745">
+            <erd-chen-participation type="standard" multiplicity="" />
+          </item>
         </abstract-items>
         <layer id="66ded4e1a2cc484abadd5ab30bb3f48d" name="Default" visible="true" enabled="true" locked="false">
           <item id="77e05ae861a34978bcd937140d95451c" iid="72833f8afa3445f785b5776b9a72d271" anchor="None" creation-date="06/18/2020 17:10:51" order-index="0" type="entity">
@@ -302,7 +354,7 @@
             <relation from="77e05ae861a34978bcd937140d95451c" from-iid="72833f8afa3445f785b5776b9a72d271" to="84c49188d42f4f4da3a55fbb7fa2a2f3" to-iid="3dbea72d0a1140e8bf10601c97502bbb" />
           </item>
           <item id="20e0625f77dc48ffb8eb006516c56330" iid="9e5677b832f64146ad116cd3d2557bee" creation-date="06/18/2020 17:13:17" order-index="4" type="relation">
-            <layout multiplicity-position="10,-10" line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="465" y1="27" x2="589" y2="27" start-border-pos="0.375" end-border-pos="0.875" name-position="0,0">
+            <layout multiplicity-position="11,-10" line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="465" y1="27" x2="589" y2="27" start-border-pos="0.375" end-border-pos="0.875" name-position="0,0">
               <points>
                 <point x="465" y="27" />
                 <point x="589" y="27" />
@@ -566,23 +618,20 @@
           <item id="c90f65627db34893be1485c0c85156a8" iid="cc1dede2cf18458c8daf37a7512bc0ca" anchor="None" creation-date="06/18/2020 17:27:53" order-index="32" type="entity">
             <layout ax="333" ay="205" awidth="72" aheight="42" x="333" y="205" width="72" height="42" />
           </item>
-          <item id="die2d4e04d5da3485b93ea575ac6b95c653415" iid="ef4e3b5307f54501947d5e6b9284a0fb" anchor="None" creation-date="06/18/2020 17:27:53" order-index="32" type="entity">
-            <layout ax="416" ay="205" awidth="72" aheight="42" x="416" y="205" width="72" height="42" />
-          </item>
           <item id="diae66b55d8c034123a8cd61ea31bc1afc2994" iid="688888a524c742268e07d6d423d2c3ff" anchor="None" creation-date="06/18/2020 17:27:53" order-index="32" type="entity">
             <layout ax="279" ay="307.75" awidth="93" aheight="42" x="279" y="307.75" width="93" height="42" />
           </item>
           <item id="c253d8248cb246babffaf99f59631c97" iid="a50c3331a33d472bb4be9db828697cff" anchor="None" creation-date="06/18/2020 17:29:58" order-index="33" type="entity">
-            <layout ax="193" ay="330" awidth="68" aheight="39.5" x="193" y="330" width="68" height="39.5" />
+            <layout ax="175" ay="330" awidth="86" aheight="39.5" x="175" y="330" width="86" height="39.5" />
           </item>
           <item id="674e725b6d6a4890ac37c8862d4e3e46" iid="3605cf406c7e4b24a14a28564d18019e" anchor="None" creation-date="06/18/2020 17:30:18" order-index="34" type="entity">
             <layout ax="246" ay="366" awidth="56" aheight="33" x="246" y="366" width="56" height="33" />
           </item>
           <item id="841ceb656985423a93a91f3aef4cc670" iid="895fc41fa7204f1a9f8b6c025423383d" creation-date="06/18/2020 17:30:35" order-index="35" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="284" y1="339" x2="258" y2="343" start-border-pos="0.814168475923084" end-border-pos="0.330935900724387" name-position="0,0">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="283" y1="338" x2="257" y2="342" start-border-pos="0.81911377679734" end-border-pos="0.323663832266119" name-position="0,0">
               <points>
-                <point x="284" y="339" />
-                <point x="258" y="343" />
+                <point x="283" y="338" />
+                <point x="257" y="342" />
               </points>
             </layout>
             <relation from="diae66b55d8c034123a8cd61ea31bc1afc2994" from-iid="688888a524c742268e07d6d423d2c3ff" to="c253d8248cb246babffaf99f59631c97" to-iid="a50c3331a33d472bb4be9db828697cff" />
@@ -606,13 +655,13 @@
             <relation from="diae66b55d8c034123a8cd61ea31bc1afc2994" from-iid="688888a524c742268e07d6d423d2c3ff" to="1657698f1a1b4ee28be7c8dcf6ae6793" to-iid="c2ff53e1299e4424b44b4c70b366a15e" />
           </item>
           <item id="cffd6ddaad8c4e51ae0e5b41f57d87ed" iid="b4cdd6427d684a31b147d09014250717" creation-date="06/18/2020 17:32:18" order-index="38" type="relation">
-            <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="431" y1="269" x2="436" y2="244" start-border-pos="0.179398155212402" end-border-pos="0.679398112826877" name-position="0,0">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" lock-to-fields="false" auto-path="" x1="449" y1="279" x2="459" y2="246" start-border-pos="0.21656977335612" end-border-pos="0.625" name-position="0,0">
               <points>
-                <point x="431" y="269" />
-                <point x="436" y="244" />
+                <point x="449" y="279" />
+                <point x="459" y="246" />
               </points>
             </layout>
-            <relation from="1376e554c6714766877130ef70ac0d2c" from-iid="1c5e7bf1cbea4f1cb4a832d1b8a27789" to="die2d4e04d5da3485b93ea575ac6b95c653415" to-iid="ef4e3b5307f54501947d5e6b9284a0fb" />
+            <relation from="1376e554c6714766877130ef70ac0d2c" from-iid="1c5e7bf1cbea4f1cb4a832d1b8a27789" to="4ea3236d58a44955bc56d1ba531b21ca" to-iid="3f9af7aff424457b997b53f773d6b33a" />
           </item>
           <item id="870e3f1bbc5a4783882fcae45e2f116c" iid="ac5c409d9e9a4177a14a71ad51b8e4d9" creation-date="06/18/2020 17:32:37" order-index="39" type="relation">
             <layout line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="396" y1="319" x2="367" y2="319" start-border-pos="0.766500854492188" end-border-pos="0.237836037912676" name-position="0,0">
@@ -694,6 +743,57 @@
               </points>
             </layout>
             <relation from="296bd3453f284876bfc92a868cebc6b6" from-iid="8b3617708a9a4be8bdbe7f8cdc448d0c" to="dif491668822504912a03c5d6cff3d74647121" to-iid="b0f3e6b5b01742969b994495ea6dc1eb" />
+          </item>
+          <item id="4ea3236d58a44955bc56d1ba531b21ca" iid="3f9af7aff424457b997b53f773d6b33a" anchor="None" creation-date="06/19/2020 21:26:03" order-index="50" type="entity">
+            <layout ax="424" ay="206" awidth="70" aheight="40" x="424" y="206" width="70" height="40" />
+          </item>
+          <item id="6d206a9e4e10413bb0a005291b55f4f4" iid="a3b3d115182d45e48dbee347c3c1ede8" anchor="None" creation-date="06/19/2020 21:27:51" order-index="51" type="entity">
+            <layout ax="691.5" ay="349.5" awidth="73" aheight="40" x="691.5" y="349.5" width="73" height="40" />
+          </item>
+          <item id="287ac94701c34433beeb998e0a56be00" iid="fb4bccffb4ca47268c7c0911ec44d62d" creation-date="06/19/2020 21:28:09" order-index="52" type="relation">
+            <layout line-style="oblique" lock-start-point="false" lock-end-point="true" lock-to-fields="false" auto-path="" x1="720" y1="349" x2="709" y2="324" start-border-pos="0.0967093689800942" end-border-pos="0.5" name-position="0,0">
+              <points>
+                <point x="720" y="349" />
+                <point x="709" y="324" />
+              </points>
+            </layout>
+            <relation from="6d206a9e4e10413bb0a005291b55f4f4" from-iid="a3b3d115182d45e48dbee347c3c1ede8" to="676879a786d14218a9f9f98f9a57bf86" to-iid="c086e8cc408d41e6b0ded035281320b8" />
+          </item>
+          <item id="12c8681c743640c7a54afaec7e5396bc" iid="d042269c8e884dc2acd5e87010d483be" anchor="None" creation-date="06/19/2020 21:29:32" order-index="53" type="entity">
+            <layout ax="624" ay="381" awidth="67.5" aheight="39" x="624" y="381" width="67.5" height="39" />
+          </item>
+          <item id="5542431cb8b54e0db21f2afd688b4792" iid="75a52dde80d54cfd906aba4da637f780" anchor="None" creation-date="06/19/2020 21:29:47" order-index="54" type="entity">
+            <layout ax="709" ay="400.5" awidth="68" aheight="40" x="709" y="400.5" width="68" height="40" />
+          </item>
+          <item id="di2f7cbf44a1c24ce2a2afd9e31e8906958745" iid="2b47532b0275426ea0fcc4d23f18a22f" anchor="None" creation-date="06/19/2020 21:29:47" order-index="54" type="entity">
+            <layout ax="787.5" ay="380.5" awidth="68" aheight="40" x="787.5" y="380.5" width="68" height="40" />
+          </item>
+          <item id="3549508477d048acac4732454011ad34" iid="5bd5aa9a1c124ab2b8355b4b6eed3bc2" creation-date="06/19/2020 21:30:23" order-index="55" type="relation">
+            <layout multiplicity-position="10,-10" line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="707" y1="386" x2="680" y2="386" start-border-pos="0.77276782989502" end-border-pos="0.281135559082031" name-position="0,0">
+              <points>
+                <point x="707" y="386" />
+                <point x="680" y="386" />
+              </points>
+            </layout>
+            <relation from="6d206a9e4e10413bb0a005291b55f4f4" from-iid="a3b3d115182d45e48dbee347c3c1ede8" to="12c8681c743640c7a54afaec7e5396bc" to-iid="d042269c8e884dc2acd5e87010d483be" />
+          </item>
+          <item id="b11b7befa9c246e8a7b6eb0a194f218c" iid="f0b7f3410748411fafe226ff213ecab6" creation-date="06/19/2020 21:30:27" order-index="56" type="relation">
+            <layout multiplicity-position="10,-10" line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="734" y1="389" x2="737" y2="400" start-border-pos="0.605479410249893" end-border-pos="0.102941176470588" name-position="0,0">
+              <points>
+                <point x="734" y="389" />
+                <point x="737" y="400" />
+              </points>
+            </layout>
+            <relation from="6d206a9e4e10413bb0a005291b55f4f4" from-iid="a3b3d115182d45e48dbee347c3c1ede8" to="5542431cb8b54e0db21f2afd688b4792" to-iid="75a52dde80d54cfd906aba4da637f780" />
+          </item>
+          <item id="674edccab3bb4340bccbde473c4d5f63" iid="197a555359d240408d69aa03a01375d5" creation-date="06/19/2020 21:30:30" order-index="57" type="relation">
+            <layout multiplicity-position="10,-10" line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="757" y1="381" x2="793" y2="389" start-border-pos="0.449933433532715" end-border-pos="0.947938919067383" name-position="0,0">
+              <points>
+                <point x="757" y="381" />
+                <point x="793" y="389" />
+              </points>
+            </layout>
+            <relation from="6d206a9e4e10413bb0a005291b55f4f4" from-iid="a3b3d115182d45e48dbee347c3c1ede8" to="di2f7cbf44a1c24ce2a2afd9e31e8906958745" to-iid="2b47532b0275426ea0fcc4d23f18a22f" />
           </item>
         </layer>
       </diagram>

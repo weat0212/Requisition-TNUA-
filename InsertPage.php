@@ -20,42 +20,42 @@
 
 <div id="contents">
 <?php
-        //表格輸入錯誤情況
-        if(!isset($_POST['applyDate'])||!isset($_POST['applicant'])||!isset($_POST['contact'])||!isset($_POST['DeptSupv'])){
+//表格輸入錯誤情況
+if(!isset($_POST['applyDate'])||!isset($_POST['applicant'])||!isset($_POST['contact'])||!isset($_POST['DeptSupv'])){
 
-            if(!isset($_POST['applyDate'])){
-            echo "申請日期輸入錯誤<br/>";
-            }else{echo"";}
-            if(!isset($_POST['applicant'])){
-            echo "申請單位輸入錯誤<br/>";
-            }else{echo"";}
-            if(!isset($_POST['contact'])){
-            echo "申請聯絡人輸入錯誤<br/>";
-            }else{echo"";}
-            if(!isset($_POST['DeptSupv'])){
-            echo "申請單位主管輸入錯誤<br/>";
-            }else{echo"";}
-            
-		}
-        //ToDo:應先檢查所有資料已輸入
-		else{
-            if(empty($_POST['applyDate'])||empty($_POST['applicant'])||empty($_POST['contact'])||empty($_POST['DeptSupv'])){
-                echo "資料未輸入尚未齊全，請重新登錄資料!";
-                exit();
-		    }
-		    else{
-                if(isset($_POST['contact'])){
-                    echo '<h2>'.$_POST['contact'].'，您已成功上傳申請表單!<br/></h2>';
-                    echo '<br/>';
-                }else{
-                    echo "申請聯絡人輸入錯誤";
-            }
+    if(!isset($_POST['applyDate'])){
+    echo "申請日期輸入錯誤<br/>";
+    }else{echo"";}
+    if(!isset($_POST['applicant'])){
+    echo "申請單位輸入錯誤<br/>";
+    }else{echo"";}
+    if(!isset($_POST['contact'])){
+    echo "申請聯絡人輸入錯誤<br/>";
+    }else{echo"";}
+    if(!isset($_POST['DeptSupv'])){
+    echo "申請單位主管輸入錯誤<br/>";
+    }else{echo"";}
+    
+}
+//ToDo:應先檢查所有資料已輸入
+else{
+    if(empty($_POST['applyDate'])||empty($_POST['applicant'])||empty($_POST['contact'])||empty($_POST['DeptSupv'])){
+        echo "資料未輸入尚未齊全，請重新登錄資料!";
+        exit();
+    }
+    else{
+        if(isset($_POST['contact'])){
+            echo '<h2>'.$_POST['contact'].'，您已成功上傳申請表單!<br/></h2>';
+            echo '<br/>';
+        }else{
+            echo "申請聯絡人輸入錯誤";
+    }
 ?>
 
 <!-- ToDo:排演日及演出日AB僅能出現一次 -->
 <?php
 function chk_repeat(){
-    
+
 }
 ?>
 
