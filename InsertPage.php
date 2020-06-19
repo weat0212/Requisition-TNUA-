@@ -54,40 +54,11 @@
 
 <!-- ToDo:排演日及演出日AB僅能出現一次 -->
 <?php
-    // 檢查是否重複輸入
-    function chk_timetable($dat){
-        $A = 0;
-        $B = 0;
-        if(isset($_POST[$dat])){
-            //check if A/B only input once
-            for($i=1 ; $i<9 ; $i++) {
-                if($_POST[$dat.'assist'.(string)$i] == 'A' || $_POST[$dat.'assist'.(string)$i] == 'a'){
-                    $A += 1;
-                }
-                if($_POST[$dat.'assist'.(string)$i] == 'B' || $_POST[$dat.'assist'.(string)$i] == 'b'){
-                    $B += 1;
-                }
-            }
-            
-            if($A==1 and $B==1){
-                // ToDo:顯示預約時段
-                echo"您的租用裝台排練時段:"."租用演出時段:</br>";
-            }else{
-                //缺值
-                echo"<font size=3 color=red>租借表單填寫缺值或多輸入值</br>";
-            }
-        }else{
-            if($dat=='dat1'){
-                echo"<font size=3 color=red>必須至少輸入一筆租用裝台排練時段、租用演出時段</br>";
-            }
-        }
-    }
-
-    for($i=0;$i<3;$i++){
-        chk_timetable('dat'.(string)$i);
-    }
+function chk_repeat(){
     
+}
 ?>
+
 
 <!-- ToDo:檢查正則式 -->
 

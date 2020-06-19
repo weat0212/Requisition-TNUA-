@@ -42,11 +42,7 @@
                         申請日期:<input type="date" name="applyDate" size="30"/>&emsp;
                         申請單位:<input type="text" name="applicant" size="30"/><br/><br/>
                         申請聯絡人:<input type="text" name="contact" size="30"/>&emsp;
-                        申請單位主管:<input type="text" name="DeptSupv" size="30"/>
-                        <br/>
-                    </li>
-
-                    <li>
+                        申請單位主管:<input type="text" name="DeptSupv" size="30"/><br/><br/>
                         地址:<input type="text" name="address" size="30"/>&emsp;
                         電話:<input type="text" name="phone" size="30" minlength="9" maxlength="10"/><br/><br/>
                         申請單位聯絡人e-mail:<input type="email" name="mail" size="30"/><br/>
@@ -70,67 +66,112 @@
                     </li>
 
                     <li>
-                        （3）租用裝台排練時段（請填Ａ）、租用演出時段（請填Ｂ），租用超過三天請另附詳細租用時段表<br/><br/>
+                        （3）租用裝台排練時段、租用演出時段，租用超過三天請另附詳細租用時段表<br/><br/>
+                        <div id='timetable'>
                         <table>
                             <thead>
                             <tr>
                                 <th>日期</th>
-                                <th>輔助時段08:00~09:00</th>
-                                <th>上午時段09:00~12:00</th>
-                                <th>輔助時段12:00~13:00</th>
-                                <th>下午時段13:00~17:00</th>
-                                <th>輔助時段17:00~18:00</th>
-                                <th>晚上時段18:00~22:00</th>
-                                <th>輔助時段22:00~24:00</th>
-                                <th>輔助時段00:00~02:00</th>
+                                <th>租用裝台排練時段</th>
+                                <th>租用演出時段</th>
                             </tr>
                             </thead>
+                            
                             <body>
-                            <tr id="rentaldat1">
+                            <tr>
                                 <td><input name = "dat1" type="date"></td>
-                                <td><input type="text" name="dat1assist1" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat1assist2" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat1assist3" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat1assist4" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat1assist5" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat1assist6" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat1assist7" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat1assist8" size="1" maxlength="1"/></td>
+                                <td>
+                                    <select name="rehearseTime">
+                                    　  <option value="t1">輔助時段08:00~09:00</option>
+                                    　  <option value="t2">上午時段09:00~12:00</option>
+                                    　  <option value="t3">輔助時段12:00~13:00</option>
+                                        <option value="t4">下午時段13:00~17:00</option>
+                                        <option value="t5">輔助時段17:00~18:00</option>
+                                        <option value="t6">晚上時段18:00~22:00</option>
+                                        <option value="t7">輔助時段22:00~24:00</option>
+                                        <option value="t8">輔助時段00:00~02:00</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="rentalTime">
+                                        <option value="t1">輔助時段08:00~09:00</option>
+                                    　  <option value="t2">上午時段09:00~12:00</option>
+                                    　  <option value="t3">輔助時段12:00~13:00</option>
+                                        <option value="t4">下午時段13:00~17:00</option>
+                                        <option value="t5">輔助時段17:00~18:00</option>
+                                        <option value="t6">晚上時段18:00~22:00</option>
+                                        <option value="t7">輔助時段22:00~24:00</option>
+                                        <option value="t8">輔助時段00:00~02:00</option>
+                                    </select>
+                                </td>
                             </tr>
 
-                            <tr id="rentaldat2">
+                            <tr>
                                 <td><input name = "dat2" type="date"></td>
-                                <td><input type="text" name="dat2assist1" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat2assist2" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat2assist3" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat2assist4" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat2assist5" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat2assist6" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat2assist7" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat2assist8" size="1" maxlength="1"/></td>
+                                <td>
+                                    <select name="rehearseTime">
+                                    　  <option value="t1">輔助時段08:00~09:00</option>
+                                    　  <option value="t2">上午時段09:00~12:00</option>
+                                    　  <option value="t3">輔助時段12:00~13:00</option>
+                                        <option value="t4">下午時段13:00~17:00</option>
+                                        <option value="t5">輔助時段17:00~18:00</option>
+                                        <option value="t6">晚上時段18:00~22:00</option>
+                                        <option value="t7">輔助時段22:00~24:00</option>
+                                        <option value="t8">輔助時段00:00~02:00</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="rentalTime">
+                                        <option value="t1">輔助時段08:00~09:00</option>
+                                    　  <option value="t2">上午時段09:00~12:00</option>
+                                    　  <option value="t3">輔助時段12:00~13:00</option>
+                                        <option value="t4">下午時段13:00~17:00</option>
+                                        <option value="t5">輔助時段17:00~18:00</option>
+                                        <option value="t6">晚上時段18:00~22:00</option>
+                                        <option value="t7">輔助時段22:00~24:00</option>
+                                        <option value="t8">輔助時段00:00~02:00</option>
+                                    </select>
+                                </td>
                             </tr>
 
                             <tr id="rentaldat3">
                                 <td><input name = "dat3" type="date"></td>
-                                <td><input type="text" name="dat3assist1" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat3assist2" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat3assist3" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat3assist4" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat3assist5" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat3assist6" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat3assist7" size="1" maxlength="1"/></td>
-                                <td><input type="text" name="dat3assist8" size="1" maxlength="1"/></td>
+                                <td>
+                                    <select name="rehearseTime">
+                                    　  <option value="t1">輔助時段08:00~09:00</option>
+                                    　  <option value="t2">上午時段09:00~12:00</option>
+                                    　  <option value="t3">輔助時段12:00~13:00</option>
+                                        <option value="t4">下午時段13:00~17:00</option>
+                                        <option value="t5">輔助時段17:00~18:00</option>
+                                        <option value="t6">晚上時段18:00~22:00</option>
+                                        <option value="t7">輔助時段22:00~24:00</option>
+                                        <option value="t8">輔助時段00:00~02:00</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="rentalTime">
+                                        <option value="t1">輔助時段08:00~09:00</option>
+                                    　  <option value="t2">上午時段09:00~12:00</option>
+                                    　  <option value="t3">輔助時段12:00~13:00</option>
+                                        <option value="t4">下午時段13:00~17:00</option>
+                                        <option value="t5">輔助時段17:00~18:00</option>
+                                        <option value="t6">晚上時段18:00~22:00</option>
+                                        <option value="t7">輔助時段22:00~24:00</option>
+                                        <option value="t8">輔助時段00:00~02:00</option>
+                                    </select>
+                                </td>
                             </tr>
 
                             </body>
                         </table>
+                        </div>
                         <!-- ToDo:Time Table -->
                     </li>
 
                     <li>
                         （4）藝文展演與非藝文展演活動，自行安排錄音綠影（需另收2000元）：
-                        <input name="arrange" type=radio value="bySelf">自行安排；
-                        <input name="arrange" type=radio value="noArr">沒有安排<br/><br/>
+                        <input name="arrange" type=radio value="Y">自行安排；
+                        <input name="arrange" type=radio value="N">沒有安排<br/><br/>
                         （5）演出時間：
                         <input type="datetime-local" name="stfromDate" size="30"/> 至
                         <input type="datetime-local" name="sttoDate" size="30"/>
