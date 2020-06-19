@@ -1,17 +1,14 @@
-/*<?php
+<?php
 	$serverName = "DESKTOP-PGTDFJ7";
 	$connectionInfo = array( "Database"=>"TEST", "UID"=>"andywang", "PWD"=>"andy0212", "CharacterSet" => "UTF-8");
 	$conn=sqlsrv_connect($serverName,$connectionInfo);
-
-	$name=$_POST['name'];
+	$applyDate=$_POST['applyDate'];
+	$name=$_POST['contact'];
 	$phone=$_POST['phone'];
 	$mail=$_POST['mail'];
-	$comment=$_POST['comment'];
-
-	$sql="INSERT INTO dbo.comment(name,phone,mail,comment) VALUES('$name','$phone','$mail','$comment')";
+	$sql="INSERT INTO dbo.comment(applyDate,name,phone,mail) VALUES('$applyDate','$name','$phone','$mail')";
 	$quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
-?>*/
-
+?>
 
 <?php
     header("Content-Type:text/html; charset=utf-8");
@@ -105,11 +102,11 @@
     }
 ?>
 
-//ToDo:檢查正則式
+<!-- //ToDo:檢查正則式
 <?php
     // $retaldatA = 
 
-?>
+?> -->
 
         //表格輸入皆正確的情況
         <div class="detail_box clearfix">
@@ -152,5 +149,3 @@
         </div>
 </div>
 </body></html>
-
-
