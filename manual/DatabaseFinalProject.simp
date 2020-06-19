@@ -19,11 +19,15 @@
         <item-type type-id="erd-chen-attribute" type="ErdChenAttribute" />
         <value>12</value>
       </counter>
+      <counter>
+        <item-type type-id="erd-entity" type="ErdEntity" />
+        <value>1</value>
+      </counter>
     </entity-names>
     <entity-ids>
       <counter>
         <item-type type-id="group" type="AbstractElementGroup" />
-        <value>622</value>
+        <value>636</value>
       </counter>
       <counter>
         <item-type type-id="erd-chen-entity" type="ErdChenEntity" />
@@ -49,10 +53,18 @@
         <item-type type-id="universal-connector" type="UniversalConnector" />
         <value>5</value>
       </counter>
+      <counter>
+        <item-type type-id="erd-entity" type="ErdEntity" />
+        <value>5</value>
+      </counter>
     </entity-ids>
     <diagrams>
       <counter>
         <type>SoftwareIdeasModeler.Core.Diagrams.Other.ChenEntityRelationshipDiagram</type>
+        <value>1</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.Other.EntityRelationshipDiagram</type>
         <value>1</value>
       </counter>
     </diagrams>
@@ -100,7 +112,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="chen-entity-relationship" id="p4b76648e83e04648a78efd9b9e242a31_448529257" name="ChenERDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-82,-265">
+      <diagram type="chen-entity-relationship" id="p4b76648e83e04648a78efd9b9e242a31_448529257" name="ChenERDiagram1" order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="100,-130">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -682,6 +694,36 @@
               </points>
             </layout>
             <relation from="296bd3453f284876bfc92a868cebc6b6" from-iid="8b3617708a9a4be8bdbe7f8cdc448d0c" to="dif491668822504912a03c5d6cff3d74647121" to-iid="b0f3e6b5b01742969b994495ea6dc1eb" />
+          </item>
+        </layer>
+      </diagram>
+      <diagram type="entity-relationship" id="pd47bfcf16c994946becb1e9f4bc5c4ca_321379648" name="EntityRelationshipDiagram1" order-index="2" overview-order-index="0" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-100,-100">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>06/19/2020 10:32:00</creation-date>
+          <change-date>06/19/2020 10:32:02</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="84769b978325454db4537f8201d7bb6e" cid="ENT004" type="erd-entity" name="Entity1" style-class="" visibility="package" change-tracking-state="added" creator="P50a0f845400a45d592b57e1fbeef2e8d" creation-date="06/19/2020 10:32:02">
+            <entity description="" />
+            <attributes />
+            <indexes />
+          </item>
+        </abstract-items>
+        <layer id="ae6ef132405245cea75fab8a473885f3" name="Default" visible="true" enabled="true" locked="false">
+          <item id="84769b978325454db4537f8201d7bb6e" iid="2641e941a85e4ef3a3e7618518ff4046" anchor="None" creation-date="06/19/2020 10:32:02" order-index="0" type="entity">
+            <layout ax="-27" ay="-51" awidth="140" aheight="160" x="-27" y="-51" width="140" height="160" />
+            <erd-entity show-nullability="true" />
           </item>
         </layer>
       </diagram>
