@@ -73,23 +73,23 @@
     $B = 0;
     if(isset($_POST['dat1'])){
         //check if A/B only input once
-        for($i=1, $i<9, $i++){
-            if(($_POST['dat1assist'.(string)$i] == 'A'||$_POST['dat1assist'.(string)$i] == 'a')){
+        for($i=1 ; $i<9 ; $i++) {
+            if($_POST['dat1assist'.(string)$i] == 'A' || $_POST['dat1assist'.(string)$i] == 'a'){
                 $A += 1;
             }else{
-                if(($_POST['dat1assist'.((string)$i] == 'B'||$_POST['dat1assist'.((string)$i] == 'b')){
+                if($_POST['dat1assist'.(string)$i] == 'B' || $_POST['dat1assist'.(string)$i] == 'b'){
                     $B += 1;
                 }
             }
         }
         if($A==1 || $B==1){
-            break;
+            exit();
         }else{
             //缺值
-            echo"租借表單填寫缺值或多輸入值"
+            echo"租借表單填寫缺值或多輸入值";
         }
     }else{
-        echo"未填寫租用裝台排練時段（請填Ａ）、租用演出時段（請填Ｂ）"
+        echo"未填寫租用裝台排練時段（請填Ａ）、租用演出時段（請填Ｂ）";
     }
 
     $A = 0;
@@ -107,7 +107,7 @@
 
 //ToDo:檢查正則式
 <?php
-    $retaldatA =
+    // $retaldatA = 
 
 ?>
 

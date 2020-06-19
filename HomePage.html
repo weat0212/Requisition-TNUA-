@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script type="text/javascript" src="ReqRegex.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>國立臺北藝術大學 首頁</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="wrapper">
+    <div id="header">
+        <a href="HomePage.html"><img class=title src="images/title.png"/><br/></a>
+        <p class="copy">首頁</p>
+        <ul id="navi">
+            <!-- 導覽列從此開始 -->
+                <li id="navi_01">
+                    <a>新增資料</a>
+                    <ul id="a1">
+                        <!-- ToDo:需要做comment表嗎 -->
+                        <li><a href="Comment.html">意見回饋</a>
+                        </li>
+                        <li><a href="InsertPage.html">訂單申請</a>
+                        </li>
+                        <li><a href="#">新增客戶</a>
+                        </li>
+                    </ul>
+                </li>
+                <li id="navi_02"><a href="QueryPage.html">查詢資料</a></li>
+                <li id="navi_03"><a href="UpdatePage.html">修改資料</a></li>
+                <li id="navi_04"><a href="Diagram.html">分析報表</a></li>
+                <li id="navi_05"><a href="Manual.html">系統手冊</a></li>
+            <!-- 導覽列到此為止 -->
+        </ul>
+    </div>
+
+
+    <form name="form" action="http://127.0.0.1/comment/comment.php" method="POST" accept-charset="UTF-8" align="center">
+        <div class="detail_box clearfix">
+            <div class="link_box">
+                <!-- <h3>服務專區</h3> -->
+
+            </div>
+        </div>
+    </form>
+
+<footer id="footer">
+    <p>112 台北市北投區學園路一號 國立台北藝術大學 展演藝術中心</p>
+    <p>Tel:(02)2893-8163</p>
+</footer>
+
+</body>
+</html>
