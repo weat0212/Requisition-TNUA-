@@ -157,11 +157,6 @@ form{
 	background-color: rgba(218, 132, 4, 0.6);
 }
 
-#timetable{
-	display:flex;
-  	justify-content:center;
-}
-
 #contents {
 	clear:both;
 	width:1000px;

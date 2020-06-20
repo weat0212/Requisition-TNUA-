@@ -52,11 +52,56 @@ else{
     }
 ?>
 
-<!-- ToDo:排演日及演出日AB僅能出現一次 -->
+
 <?php
-function chk_repeat(){
-    
+function chk_timetable($dat){
+    // 查看A/B順序以及時間點
+    $time = [];
+    return $time;
 }
+
+function timemapping($t){
+    // 對照時間表
+}
+
+function chk_rep_time(){
+    // SQL查詢是否有重複值
+}
+
+if(isset($_POST['dat1'])){
+    $time1 = array(chk_timetable('dat1'));
+    $time2 = array(chk_timetable('dat2'));
+    $time3 = array(chk_timetable('dat3'));
+    // 檢查重複預定
+    if(chk_rep_time($time1)){
+        echo"第一欄表格時間已被預訂，請重新預定";
+        break;
+    }else{
+        // 下一欄日期，檢查是否輸入
+        if(isset($_POST['dat2'])){
+            // 檢查重複預定
+            if(chk_rep_time($time2)){
+                echo"第二欄表格時間已被預訂，請重新預定";
+                break;
+            }else{
+                // 下一欄日期，檢查是否輸入
+                if(isset($_POST['dat3'])){
+                    // 檢查重複預定
+                    if(chk_rep_time($time3)){
+                        echo"第三欄表格時間已被預訂，請重新預定";
+                        break;
+                    }
+                }
+            }
+        }
+    }else{
+        
+        // 送insert到資料庫
+    }
+}else{
+    echo"尚未設置租用裝台排練時段(請填A)、租用演出時段(請填B)";
+}
+
 ?>
 
 
