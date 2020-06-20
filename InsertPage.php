@@ -55,7 +55,7 @@ else{
 <!-- ToDo:排演日及演出日AB僅能出現一次 -->
 <?php
 function chk_repeat(){
-
+    
 }
 ?>
 
