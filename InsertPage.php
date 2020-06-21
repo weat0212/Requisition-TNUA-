@@ -141,6 +141,8 @@ if(!isset($_POST['dat1']) and !isset($_POST['dat2']) and !isset($_POST['dat3']))
     echo "未輸入（3）租用裝台排練時段(請填A)、租用演出時段(請填B)";
 }else{
     // 每一個收到的日期皆輸入至array中
+    // BUG:Array can't show in page
+    // Move to table down here
     for($i=1;$i<4;$i++){
         if($_POST['dat'.(string)$i]){
             if($i==1){
