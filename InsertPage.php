@@ -75,7 +75,8 @@ function chk_A($dat){
     for($i=1;$i<9;$i++){
         $tmp = $_POST['dat'.(string)$dat.'t'.(string)$i];
         if($tmp=='A'||$tmp=='a'){
-            $time[$i] = timemapping($i);
+            $time[(string)$i] = timemapping($i);// IMPORTANT! index error
+            //此處利用str index
         }else{
             echo"";
         }
@@ -89,7 +90,7 @@ function chk_B($dat){
     for($i=1;$i<9;$i++){
         $tmp = $_POST['dat'.(string)$dat.'t'.(string)$i];
         if($tmp=='B'||$tmp=='b'){
-            $time[$i] = timemapping($i);
+            $time[(string)$i] = timemapping($i);// IMPORTANT! index error
         }else{
             echo"";
         }
@@ -142,45 +143,47 @@ if(!isset($_POST['dat1']) and !isset($_POST['dat2']) and !isset($_POST['dat3']))
     echo "未輸入（3）租用裝台排練時段(請填A)、租用演出時段(請填B)";
 }else{
     // 每一個收到的日期皆輸入至array中
-    // BUG:Array can't show in page
-    // Move to table down here
+    // BUG:
     for($i=1;$i<4;$i++){
         if(isset($_POST['dat'.(string)$i])){
             if($i==1){
                 $d1A = chk_A($i);
                 $d1B = chk_B($i);
-                echo "您預約排練的時段是：".$_POST['dat'.(string)$i];
-                for($j=1;$j<=sizeof($d1A);$j++){
-                    echo $d1A[$j].' ';
+                echo $_POST['dat'.(string)$i]."，您預約排練的時段是：";
+                foreach($d1A as $val){
+                    echo $val.' ';
                 }
-                echo"，演出時段是："
-                for($j=1;$j<=sizeof($d1B);$j++){
-                    echo $d1B[$j].' ';
+                echo '</br>'."演出時段是：";
+                foreach($d1B as $val){
+                    echo $val.' ';
                 }
+                echo '</br>';
             }
             if($i==2){
                 $d2A = chk_A($i);
                 $d2B = chk_B($i);
-                echo "您預約排練的時段是：".$_POST['dat'.(string)$i];
-                for($j=1;$j<=sizeof($d2A);$j++){
-                    echo $d2A[$j].' ';
+                echo $_POST['dat'.(string)$i]."，您預約排練的時段是：";
+                foreach($d2A as $val){
+                    echo $val.' ';
                 }
-                echo"，演出時段是："
-                for($j=1;$j<=sizeof($d2B);$j++){
-                    echo $d2B[$j].' ';
+                echo '</br>'."演出時段是：";
+                foreach($d2B as $val){
+                    echo $val.' ';
                 }
+                echo '</br>';
             }
             if($i==3){
                 $d3A = chk_A($i);
                 $d3B = chk_B($i);
-                echo "您預約排練的時段是：".$_POST['dat'.(string)$i];
-                for($j=1;$j<=sizeof($d3A);$j++){
-                    echo $d3A[$j].' ';
+                echo $_POST['dat'.(string)$i]."，您預約排練的時段是：";
+                foreach($d3A as $val){
+                    echo $val.' ';
                 }
-                echo"，演出時段是："
-                for($j=1;$j<=sizeof($d3B);$j++){
-                    echo $d3B[$j].' ';
+                echo '</br>'."演出時段是：";
+                foreach($d3B as $val){
+                    echo $val.' ';
                 }
+                echo '</br>';
             }
         }
     }
