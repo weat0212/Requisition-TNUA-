@@ -129,6 +129,7 @@ function timemapping($i){
 
 function chk_rep_time(){
     // SQL查詢是否有重複值
+    // 有空再說
 }
 
 global $d1A;
@@ -144,21 +145,42 @@ if(!isset($_POST['dat1']) and !isset($_POST['dat2']) and !isset($_POST['dat3']))
     // BUG:Array can't show in page
     // Move to table down here
     for($i=1;$i<4;$i++){
-        if($_POST['dat'.(string)$i]){
+        if(isset($_POST['dat'.(string)$i])){
             if($i==1){
                 $d1A = chk_A($i);
                 $d1B = chk_B($i);
-                echo "您預約排練的時段是：".$d1A."，演出時段是：".$d1B;
+                echo "您預約排練的時段是：".$_POST['dat'.(string)$i];
+                for($j=1;$j<=sizeof($d1A);$j++){
+                    echo $d1A[$j].' ';
+                }
+                echo"，演出時段是："
+                for($j=1;$j<=sizeof($d1B);$j++){
+                    echo $d1B[$j].' ';
+                }
             }
             if($i==2){
                 $d2A = chk_A($i);
                 $d2B = chk_B($i);
-                echo "您預約排練的時段是：".$d2A."，演出時段是：".$d2B;
+                echo "您預約排練的時段是：".$_POST['dat'.(string)$i];
+                for($j=1;$j<=sizeof($d2A);$j++){
+                    echo $d2A[$j].' ';
+                }
+                echo"，演出時段是："
+                for($j=1;$j<=sizeof($d2B);$j++){
+                    echo $d2B[$j].' ';
+                }
             }
             if($i==3){
                 $d3A = chk_A($i);
                 $d3B = chk_B($i);
-                echo "您預約排練的時段是：".$d2A."，演出時段是：".$d2B;
+                echo "您預約排練的時段是：".$_POST['dat'.(string)$i];
+                for($j=1;$j<=sizeof($d3A);$j++){
+                    echo $d3A[$j].' ';
+                }
+                echo"，演出時段是："
+                for($j=1;$j<=sizeof($d3B);$j++){
+                    echo $d3B[$j].' ';
+                }
             }
         }
     }
