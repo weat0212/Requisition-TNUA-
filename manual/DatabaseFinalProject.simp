@@ -27,7 +27,7 @@
     <entity-ids>
       <counter>
         <item-type type-id="group" type="AbstractElementGroup" />
-        <value>1695</value>
+        <value>1716</value>
       </counter>
       <counter>
         <item-type type-id="erd-chen-entity" type="ErdChenEntity" />
@@ -635,7 +635,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="entity-relationship" id="pd47bfcf16c994946becb1e9f4bc5c4ca_321379648" name="EntityRelationshipDiagram0NF" order-index="2" overview-order-index="0" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-100,-92">
+      <diagram type="entity-relationship" id="pd47bfcf16c994946becb1e9f4bc5c4ca_321379648" name="EntityRelationshipDiagram0NF" order-index="2" overview-order-index="0" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-100,-100">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -662,8 +662,8 @@
               <attribute uid="a1ca9b939a6574d65901236698da72b70984" cid="ELEM005" name="地址" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a3a69a0307dfc47bab4a53c414c56a062390" cid="ELEM006" name="電話" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="aa4e70af2c98b4460974cfe14f9804ec2288" cid="ELEM007" name="e-mail" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a942d024730d7422ebe22618524358c5b877" cid="ELEM016" name="發票抬頭" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a877616f005da453e889f0c7abc549bf7812" cid="ELEM017" name="統一編號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
+              <attribute uid="a942d024730d7422ebe22618524358c5b877" cid="ELEM016" name="發票抬頭" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="true" description="" default-value="" auto-increment="false" />
+              <attribute uid="a877616f005da453e889f0c7abc549bf7812" cid="ELEM017" name="統一編號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="true" description="" default-value="" auto-increment="false" />
               <attribute uid="a9c40547182e048be83af0d9c4dfe63b1790" cid="ELEM019" name="退款銀行/郵局" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a4f29d60197314beeae6e7e737a249169251" cid="ELEM020" name="退款分行" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="aa4e99d2909b140979e7a9f90516a474f17" cid="ELEM021" name="退款帳號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
@@ -700,7 +700,7 @@
         </abstract-items>
         <layer id="ae6ef132405245cea75fab8a473885f3" name="Default" visible="true" enabled="true" locked="false">
           <item id="84769b978325454db4537f8201d7bb6e" iid="2641e941a85e4ef3a3e7618518ff4046" anchor="None" creation-date="06/19/2020 10:32:02" order-index="0" type="entity">
-            <layout ax="35" ay="12" awidth="182" aheight="239" x="35" y="12" width="182" height="239" />
+            <layout ax="35" ay="12" awidth="188" aheight="243" x="35" y="12" width="188" height="243" />
             <erd-entity show-nullability="true" />
           </item>
           <item id="e6c5f7c7a63946bfa66640d315e1f5ff" iid="e5d12e139d1c4156975b81263c65eacd" anchor="None" creation-date="06/20/2020 14:03:30" order-index="1" type="entity">
@@ -708,17 +708,17 @@
             <erd-entity show-nullability="true" />
           </item>
           <item id="81f05c609ca54f5db72494c6528a88ea" iid="72747d29d8ba44e0a9b419839d336030" creation-date="06/20/2020 15:28:26" order-index="2" type="relation">
-            <layout start-role-position="25,15" end-role-position="25,-15" line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="217" y1="133" x2="347" y2="133" start-border-pos="0.376079671053707" end-border-pos="0.875213575951847" name-position="0,0">
+            <layout start-role-position="25,15" end-role-position="25,-15" line-style="oblique" lock-start-point="false" lock-end-point="false" lock-to-fields="false" auto-path="" x1="223" y1="134" x2="347" y2="134" start-border-pos="0.375514403292181" end-border-pos="0.874485596707819" name-position="0,0">
               <points>
-                <point x="217" y="133" />
-                <point x="347" y="133" />
+                <point x="223" y="134" />
+                <point x="347" y="134" />
               </points>
             </layout>
             <relation from="84769b978325454db4537f8201d7bb6e" from-iid="2641e941a85e4ef3a3e7618518ff4046" to="e6c5f7c7a63946bfa66640d315e1f5ff" to-iid="e5d12e139d1c4156975b81263c65eacd" />
           </item>
         </layer>
       </diagram>
-      <diagram type="entity-relationship" id="pec10c2a4936847f6bd5807a01d6d457b_636269110" name="EntityRelationshipDiagram1NF" order-index="3" overview-order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-69,-92">
+      <diagram type="entity-relationship" id="pec10c2a4936847f6bd5807a01d6d457b_636269110" name="EntityRelationshipDiagram1NF" order-index="3" overview-order-index="1" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-100,-100">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -744,8 +744,8 @@
               <attribute uid="a1ca9b939a6574d65901236698da72b70984" cid="ELEM005" name="地址" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a3a69a0307dfc47bab4a53c414c56a062390" cid="ELEM006" name="電話" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="aa4e70af2c98b4460974cfe14f9804ec2288" cid="ELEM007" name="e-mail" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a942d024730d7422ebe22618524358c5b877" cid="ELEM016" name="發票抬頭" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a877616f005da453e889f0c7abc549bf7812" cid="ELEM017" name="統一編號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
+              <attribute uid="a942d024730d7422ebe22618524358c5b877" cid="ELEM016" name="發票抬頭" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="true" description="" default-value="" auto-increment="false" />
+              <attribute uid="a877616f005da453e889f0c7abc549bf7812" cid="ELEM017" name="統一編號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="true" description="" default-value="" auto-increment="false" />
               <attribute uid="a9c40547182e048be83af0d9c4dfe63b1790" cid="ELEM019" name="退款銀行/郵局" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a4f29d60197314beeae6e7e737a249169251" cid="ELEM020" name="退款分行" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="aa4e99d2909b140979e7a9f90516a474f17" cid="ELEM021" name="退款帳號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
@@ -891,7 +891,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="entity-relationship" id="pfe7bce9270c64be5826714abf996a5e7_416085586" name="EntityRelationshipDiagram2NF" order-index="4" overview-order-index="2" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-69,-92">
+      <diagram type="entity-relationship" id="pfe7bce9270c64be5826714abf996a5e7_416085586" name="EntityRelationshipDiagram2NF" order-index="4" overview-order-index="2" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-100,-100">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -928,8 +928,8 @@
               <attribute uid="a1ca9b939a6574d65901236698da72b70984" cid="ELEM005" name="地址" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a3a69a0307dfc47bab4a53c414c56a062390" cid="ELEM006" name="電話" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="aa4e70af2c98b4460974cfe14f9804ec2288" cid="ELEM007" name="e-mail" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a942d024730d7422ebe22618524358c5b877" cid="ELEM016" name="發票抬頭" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a877616f005da453e889f0c7abc549bf7812" cid="ELEM017" name="統一編號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
+              <attribute uid="a942d024730d7422ebe22618524358c5b877" cid="ELEM016" name="發票抬頭" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="true" description="" default-value="" auto-increment="false" />
+              <attribute uid="a877616f005da453e889f0c7abc549bf7812" cid="ELEM017" name="統一編號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="true" description="" default-value="" auto-increment="false" />
             </attributes>
             <indexes />
           </item>
@@ -1091,7 +1091,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="entity-relationship" id="pae727152aafc4e69ba11f4c4be7a58bc_789976109" name="EntityRelationshipDiagram3NF" order-index="5" overview-order-index="3" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-69,-23">
+      <diagram type="entity-relationship" id="pae727152aafc4e69ba11f4c4be7a58bc_789976109" name="EntityRelationshipDiagram3NF" order-index="5" overview-order-index="3" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="-100,-100">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -1197,8 +1197,8 @@
               <attribute uid="a1ca9b939a6574d65901236698da72b70984" cid="ELEM005" name="地址" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a3a69a0307dfc47bab4a53c414c56a062390" cid="ELEM006" name="電話" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="aa4e70af2c98b4460974cfe14f9804ec2288" cid="ELEM007" name="e-mail" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a942d024730d7422ebe22618524358c5b877" cid="ELEM016" name="發票抬頭" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a877616f005da453e889f0c7abc549bf7812" cid="ELEM017" name="統一編號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
+              <attribute uid="a942d024730d7422ebe22618524358c5b877" cid="ELEM016" name="發票抬頭" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="true" description="" default-value="" auto-increment="false" />
+              <attribute uid="a877616f005da453e889f0c7abc549bf7812" cid="ELEM017" name="統一編號" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="true" description="" default-value="" auto-increment="false" />
             </attributes>
             <indexes />
           </item>
