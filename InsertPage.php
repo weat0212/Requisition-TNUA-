@@ -18,32 +18,39 @@
         <h1>申請單上傳狀態</h1>
   </div>
 
+
 <div id="contents">
 <?php
 // 申請人表格少輸入情況
+// 檢查所有的表格 flag
+global $flag;
+$flag = true;
+
+// #### Main ####
+// 檢查變數存在
 if(!isset($_POST['applyDate'])||!isset($_POST['applicant'])||!isset($_POST['contact'])||!isset($_POST['DeptSupv'])||
 !isset($_POST['address'])||!isset($_POST['phone'])||!isset($_POST['mail'])){
 
     if(!isset($_POST['applyDate'])){
-    echo "申請日期輸入錯誤<br/>";
+    echo "申請日期變數錯誤<br/>";
     }else{echo"";}
     if(!isset($_POST['applicant'])){
-    echo "申請單位輸入錯誤<br/>";
+    echo "申請單位變數錯誤<br/>";
     }else{echo"";}
     if(!isset($_POST['contact'])){
-    echo "申請聯絡人輸入錯誤<br/>";
+    echo "申請聯絡人變數錯誤<br/>";
     }else{echo"";}
     if(!isset($_POST['DeptSupv'])){
-    echo "申請單位主管輸入錯誤<br/>";
+    echo "申請單位主管變數錯誤<br/>";
     }else{echo"";}
     if(!isset($_POST['address'])){
-    echo "地址輸入錯誤<br/>";
+    echo "地址變數錯誤<br/>";
     }else{echo"";}
     if(!isset($_POST['phone'])){
-    echo "電話輸入錯誤<br/>";
+    echo "電話變數錯誤<br/>";
     }else{echo"";}
     if(!isset($_POST['mail'])){
-    echo "信箱輸入錯誤<br/>";
+    echo "信箱變數錯誤<br/>";
     }else{echo"";}
 }
 // ToDo:應先檢查所有資料已輸入
@@ -51,18 +58,43 @@ if(!isset($_POST['applyDate'])||!isset($_POST['applicant'])||!isset($_POST['cont
 else{
     if(empty($_POST['applyDate'])||empty($_POST['applicant'])||empty($_POST['contact'])||empty($_POST['DeptSupv'])||
     empty($_POST['address'])||empty($_POST['phone'])||empty($_POST['mail'])){
-        echo "資料未輸入尚未齊全，請重新登錄資料!";
-        exit();
+        echo "<h3>基本資料未輸入尚未齊全，請重新登錄資料!</h2></br>";
+        $flag=false;
     }
-    //完成表單之宣告
-    else{
+    if(empty($_POST['aplyLoc'])||empty($_POST['numofParts'])||empty($_POST['aplyfor'])){
+        echo "<h2>申請場地資料未輸入尚未齊全，請重新登錄資料!</h2></br>";
+        $flag=false;
+    }
+    // ToDo:附件資料判定
+    $attIsEmp=true;
+    for($i=1;$i<=6;$i++){
+        if(!empty($_POST['a'.(string)$i])){
+            $attIsEmp=false;
+        }
+    }
+    
+    if(empty($_POST['arrange'])||empty($_POST['clstmeStart'])||empty($_POST['clstmeEnd'])||empty($_POST['actComment'])||$attIsEmp==true){
+        echo "<h2>申請內容資料未輸入尚未齊全，請重新登錄資料!</h2></br>";
+        $flag=false;
+    }
+
+    if(empty($_POST['receipt'])||empty($_POST['taxId'])||empty($_POST['bankname'])||empty($_POST['bankbranch'])||empty($_POST['returnAcc'])||empty($_POST['accName'])){
+        echo "<h2>發票/退款資料未輸入尚未齊全，請重新登錄資料!</h2></br>";
+        $flag=false;
+    }
+    
+    // 完成表單之宣告
+    if($flag == true){
         if(isset($_POST['contact'])){
             echo '<h2>'.$_POST['contact'].'，您已成功上傳申請表單!<br/></h2>';
             echo '<br/>';
         }else{
             echo "申請聯絡人輸入錯誤";
         }
+    }else{
+        exit();
     }
+
 ?>
 
 
@@ -139,21 +171,21 @@ global $d3A;
 global $d1B;
 global $d2B;
 global $d3B;
-if(!isset($_POST['dat1']) and !isset($_POST['dat2']) and !isset($_POST['dat3'])){
+if(empty($_POST['dat1']) and empty($_POST['dat2']) and empty($_POST['dat3'])){
     echo "未輸入（3）租用裝台排練時段(請填A)、租用演出時段(請填B)";
 }else{
     // 每一個收到的日期皆輸入至array中
     // BUG:
     for($i=1;$i<4;$i++){
-        if(isset($_POST['dat'.(string)$i])){
+        if(!empty($_POST['dat'.(string)$i])){
             if($i==1){
                 $d1A = chk_A($i);
                 $d1B = chk_B($i);
-                echo $_POST['dat'.(string)$i]."，您預約排練的時段是：";
+                echo $_POST['dat'.(string)$i]."，您預約排練的時段：";
                 foreach($d1A as $val){
                     echo $val.' ';
                 }
-                echo '</br>'."演出時段是：";
+                echo '</br>'."演出時段：";
                 foreach($d1B as $val){
                     echo $val.' ';
                 }
@@ -162,11 +194,11 @@ if(!isset($_POST['dat1']) and !isset($_POST['dat2']) and !isset($_POST['dat3']))
             if($i==2){
                 $d2A = chk_A($i);
                 $d2B = chk_B($i);
-                echo $_POST['dat'.(string)$i]."，您預約排練的時段是：";
+                echo $_POST['dat'.(string)$i]."，您預約排練的時段：";
                 foreach($d2A as $val){
                     echo $val.' ';
                 }
-                echo '</br>'."演出時段是：";
+                echo '</br>'."演出時段：";
                 foreach($d2B as $val){
                     echo $val.' ';
                 }
@@ -175,11 +207,11 @@ if(!isset($_POST['dat1']) and !isset($_POST['dat2']) and !isset($_POST['dat3']))
             if($i==3){
                 $d3A = chk_A($i);
                 $d3B = chk_B($i);
-                echo $_POST['dat'.(string)$i]."，您預約排練的時段是：";
+                echo $_POST['dat'.(string)$i]."，您預約排練的時段：";
                 foreach($d3A as $val){
                     echo $val.' ';
                 }
-                echo '</br>'."演出時段是：";
+                echo '</br>'."演出時段：";
                 foreach($d3B as $val){
                     echo $val.' ';
                 }
@@ -238,7 +270,7 @@ if(!isset($_POST['dat1']) and !isset($_POST['dat2']) and !isset($_POST['dat3']))
         else{
             echo "電話號碼錯誤";
         }
-    }
+}
         ?>
     </p>
     </div>
