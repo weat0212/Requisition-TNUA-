@@ -293,11 +293,17 @@ else{
 	$serverName = "DESKTOP-PGTDFJ7";
 	$connectionInfo = array( "Database"=>"FinalProject", "UID"=>"andywang", "PWD"=>"andy0212", "CharacterSet" => "UTF-8");
 	$conn=sqlsrv_connect($serverName,$connectionInfo);
+    // 申請人 Applicant
     $applyDate=$_POST['applyDate'];
 	$name=$_POST['contact'];
     $phone=$_POST['phone'];
 	$mail=$_POST['mail'];
-	$sql="INSERT INTO dbo.comment(applyDate,name,phone,email) VALUES('$applyDate','$name','$phone','$mail')";
+    $sql="INSERT INTO dbo.comment(applyDate,name,phone,email) VALUES('$applyDate','$name','$phone','$mail')";
+    // 保證金 Margin
+    // 申請單 Requisition
+    // 訂單 Ordering
+    // 排演時間 Showtime
+    // 演出時間 Rehearsal
 	$quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
 ?>
 </body></html>
