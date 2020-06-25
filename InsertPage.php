@@ -34,7 +34,7 @@ function chk_A($dat){
     for($i=1;$i<9;$i++){
         $tmp = $_POST['dat'.(string)$dat.'t'.(string)$i];
         if($tmp=='A'||$tmp=='a'){
-            $time[(string)$i] = timemapping($i);// IMPORTANT! index error
+            $time[(string)$i] = timemapping($i);
             //此處利用str index
         }else{
             echo"";
@@ -49,7 +49,7 @@ function chk_B($dat){
     for($i=1;$i<9;$i++){
         $tmp = $_POST['dat'.(string)$dat.'t'.(string)$i];
         if($tmp=='B'||$tmp=='b'){
-            $time[(string)$i] = timemapping($i);// IMPORTANT! index error
+            $time[(string)$i] = timemapping($i);
         }else{
             echo"";
         }
@@ -93,9 +93,14 @@ function time_compar($dat1, $dat2){
 
 function chk_rep_time(){
     // ToDo:SQL查詢是否有重複值
-    // 有空再說
+    // 未完成
 }
 
+function chk_priori($A, $B){
+    static $count = false;
+    // ToDo:檢查A早於B
+    // 未完成
+}
 
 // #### Main ####
 // 時段表部分
@@ -187,7 +192,7 @@ if(!isset($_POST['applyDate'])||!isset($_POST['applicant'])||!isset($_POST['cont
 else{
     if(empty($_POST['applyDate'])||empty($_POST['applicant'])||empty($_POST['contact'])||empty($_POST['DeptSupv'])||
     empty($_POST['address'])||empty($_POST['phone'])||empty($_POST['mail'])){
-        echo "<h3>基本資料未輸入尚未齊全，請重新登錄資料!</h2></br>";
+        echo "<h2>基本資料未輸入尚未齊全，請重新登錄資料!</h2></br>";
         $flag=false;
     }
     if(empty($_POST['aplyLoc'])||empty($_POST['numofParts'])||empty($_POST['aplyfor'])){
@@ -196,10 +201,12 @@ else{
     }
 
     // 拆台時間次序檢查
-    if(!time_compar($_POST['clstmeStart'], $_POST['clstmeEnd'])){
-        echo"（5）拆台時間順序錯誤!";
-        $flag=false;
-    }
+    if(!empty($_POST['clstmeStart'] and !empty($_POST['clstmeEnd']))){
+        if(!time_compar($_POST['clstmeStart'], $_POST['clstmeEnd'])){
+            echo"（5）拆台時間順序錯誤!";
+            $flag=false;
+        }
+    }else{$flag=false;}
 
     // 附件資料判定
     $attIsEmp=true;

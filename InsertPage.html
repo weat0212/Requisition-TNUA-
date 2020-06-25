@@ -38,27 +38,28 @@
                 <!-- <h3>服務專區</h3> -->
 
                 <ul>
-                    <li>
-                        申請日期:<input type="date" name="applyDate" size="30"/>&emsp;
+                    <div>
+                        申請日期:<input type="date" name="applyDate" size="30"/><br/><br/>
                         申請單位:<input type="text" name="applicant" size="30"/><br/><br/>
-                        申請聯絡人:<input type="text" name="contact" size="30"/>&emsp;
+                        申請聯絡人:<input type="text" name="contact" size="30"/><br/><br/>
+                    </div>
+                    <div>
                         申請單位主管:<input type="text" name="DeptSupv" size="30"/><br/><br/>
-                        地址:<input type="text" name="address" size="30"/>&emsp;
+                        地址:<input type="text" name="address" size="30"/><br/><br/>
                         電話:<input type="text" name="phone" size="30" minlength="9" maxlength="10"/><br/><br/>
-                        申請單位聯絡人e-mail:<input type="email" name="mail" size="30"/><br/>
-                    </li><br/>
-
-                    <form>
-                        （1）申請場地：
-                        <select name="aplyLoc">
-                            　<option value="音樂廳">音樂廳</option>
-                            　<option value="戲劇廳">戲劇廳</option>
-                            　<option value="舞蹈廳">舞蹈廳</option>
-                        </select>
-                        ，參與共<input type="number" name="numofParts" min="1" max="150"/>人
-                    </form>
+                        申請單位聯絡人e-mail:<input type="email" name="mail" size="30"/><br/><br/>
+                    </div>
 
                     <li>
+                        <form>
+                            （1）申請場地：
+                            <select name="aplyLoc">
+                                　<option value="音樂廳">音樂廳</option>
+                                　<option value="戲劇廳">戲劇廳</option>
+                                　<option value="舞蹈廳">舞蹈廳</option>
+                            </select>
+                            ，參與共<input type="number" name="numofParts" min="1" max="150"/>人
+                        </form>
                         （2）申請項目：
                         <input name="aplyfor" type=radio value="藝文展演活動">藝文展演活動
                         <input name="aplyfor" type=radio value="專為錄音綠影租用">專為錄音綠影租用

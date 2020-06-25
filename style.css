@@ -1,4 +1,4 @@
-@charset "UTF-8";
+@charset "UTlin-8";
 
 * {
 	margin:0;
@@ -128,7 +128,6 @@ form{
 
 #navi li a:hover {
 	background-color: rgba(255,255,255,0.7);
-
 }
 
 #navi li ul {
@@ -138,10 +137,11 @@ form{
     /* padding-top: 10px; */
     float: left;
     line-height: 1.6em;
-    background-color: rgba(230, 140, 5, 0.9);
+    background-color: rgba(230, 140, 5, 0.95);
     text-decoration: none;
 	color: #FFFFFF;
 	list-style-type: none;
+	backface-visibility: hidden; /*隱藏選單背景*/
 }
 
 /* #navi li ul {
@@ -154,7 +154,7 @@ form{
 }
 
 #navi li a:hover {
-	background-color: rgba(218, 132, 4, 0.6);
+	background-color: rgba(218, 132, 4, 0.7);
 }
 
 #contents {
@@ -269,6 +269,13 @@ form{
 	font-style:normal;
 	text-align:right;
 	color:#FFFFFF;
+}
+
+.link_box div{
+	/* display: inline-table; */
+	text-align: left;
+	float: left;
+	width: 465px;
 }
 
 .data_box{
