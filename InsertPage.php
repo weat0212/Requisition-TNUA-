@@ -188,7 +188,7 @@ if(!isset($_POST['applyDate'])||!isset($_POST['applicant'])||!isset($_POST['cont
     }else{echo"";}
 }
 
-// 申請人表格有輸入之情形
+// 申請人表格有無輸入之情形
 else{
     if(empty($_POST['applyDate'])||empty($_POST['applicant'])||empty($_POST['contact'])||empty($_POST['DeptSupv'])||
     empty($_POST['address'])||empty($_POST['phone'])||empty($_POST['mail'])){
@@ -239,12 +239,18 @@ else{
         exit();
     }
 
+    // ToDo:Download Files
+    // if($_FILES){
+        
+    // }
+
 ?>
 
 
 <!-- ToDo:檢查正則式 -->
 
         <!-- 表格輸入皆正確的情況 -->
+        <!-- 顯示輸入成功使用者基本資料 -->
     <div class="detail_box clearfix">
         <p class="photo">
             <img src="images/thanKU.webp" width="250" height="200" alt="謝謝你">

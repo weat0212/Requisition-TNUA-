@@ -38,17 +38,20 @@
                 <!-- <h3>服務專區</h3> -->
 
                 <ul>
+                    <li>
                     <div>
-                        申請日期:<input type="date" name="applyDate" size="30"/><br/><br/>
-                        申請單位:<input type="text" name="applicant" size="30"/><br/><br/>
-                        申請聯絡人:<input type="text" name="contact" size="30"/><br/><br/>
+                        申請日期：&emsp;&emsp;<input type="date" name="applyDate" size="30"/><br/><br/>
+                        申請單位：&emsp;&emsp;<input type="text" name="applicant" size="30"/><br/><br/>
+                        申請單位主管：<input type="text" name="DeptSupv" size="30"/><br/><br/>
                     </div>
                     <div>
-                        申請單位主管:<input type="text" name="DeptSupv" size="30"/><br/><br/>
-                        地址:<input type="text" name="address" size="30"/><br/><br/>
-                        電話:<input type="text" name="phone" size="30" minlength="9" maxlength="10"/><br/><br/>
-                        申請單位聯絡人e-mail:<input type="email" name="mail" size="30"/><br/><br/>
+                        申請聯絡人：<input type="text" name="contact" size="30"/><br/><br/>
+                        地址：&emsp;&emsp;&emsp;<input type="text" name="address" size="30"/><br/><br/>
+                        電話：&emsp;&emsp;&emsp;<input type="text" name="phone" size="30" minlength="9" maxlength="10"/><br/><br/>
+                        E-mail：&nbsp;&nbsp;&emsp;<input type="email" name="mail" size="30"/><br/><br/>
                     </div>
+                    </li>
+                    <p id=dot></p>
 
                     <li>
                         <form>
@@ -60,15 +63,18 @@
                             </select>
                             ，參與共<input type="number" name="numofParts" min="1" max="150"/>人
                         </form>
+                    </li>
+                    <li>
+                        
                         （2）申請項目：
-                        <input name="aplyfor" type=radio value="藝文展演活動">藝文展演活動
-                        <input name="aplyfor" type=radio value="專為錄音綠影租用">專為錄音綠影租用
+                        <input name="aplyfor" type=radio value="藝文展演活動">藝文展演活動&emsp;
+                        <input name="aplyfor" type=radio value="專為錄音綠影租用">專為錄音綠影租用&emsp;
                         <input name="aplyfor" type=radio value="非藝文展演活動">非藝文展演活動
                         <input name="usedfor" type="text" size="10">
                     </li>
-
+                    
                     <li>
-                        （3）租用裝台排練時段(請填A)、租用演出時段(請填B)，租用超過三天請另附詳細租用時段表<br/><br/>
+                        （3）租用裝台排練時段(請填A)、租用演出時段(請填B)，租用超過三天請另附詳細租用時段表：<br/><br/>
                         <table>
                             <thead>
                             <tr>
@@ -127,33 +133,40 @@
 
                     <li>
                         （4）藝文展演與非藝文展演活動，自行安排錄音綠影（需另收2000元）：
-                        <input name="arrange" type=radio value="自行安排">自行安排；
+                        <input name="arrange" type=radio value="自行安排">自行安排&emsp;
                         <input name="arrange" type=radio value="沒有安排">沒有安排<br/><br/>
+                    </li>
+                    <li>
                         （5）拆台時間：
                         <input type="datetime-local" name="clstmeStart" size="30"/> 至
                         <input type="datetime-local" name="clstmeEnd" size="30"/>
                         <br/><br/>
-                        （6）活動內容：（節目名稱及簡介，需付企劃書詳細說明）<br/>
-                        <textarea name="actComment" rows="5" cols="33"></textarea><br/><br/>
+                    </li>
+                    <li>
+                        （6）活動內容：<br/>
+                        <textarea name="actComment" rows="5" cols="33" placeholder="（節目名稱及簡介，需付企劃書詳細說明）"></textarea><br/><br/>
                         <input type="file" id="input"><br/><br/>
-
+                    </li>
+                    <li>
                         （7）附件：
-                        <input name="a1" type=checkbox value="演出企劃書">演出企劃書
-                        <input name="a2" type=checkbox value="演出單位簡介">演出單位簡介
-                        <input name="a3" type=checkbox value="租用時段表">租用時段表
-                        <input name="a4" type=checkbox value="演出時間表">演出時間表
-                        <input name="a5" type=checkbox value="視聽資料">視聽資料
+                        <input name="a1" type=checkbox value="演出企劃書">演出企劃書&ensp;
+                        <input name="a2" type=checkbox value="演出單位簡介">演出單位簡介&ensp;
+                        <input name="a3" type=checkbox value="租用時段表">租用時段表&ensp;
+                        <input name="a4" type=checkbox value="演出時間表">演出時間表&ensp;
+                        <input name="a5" type=checkbox value="視聽資料">視聽資料&ensp;
                         <input name="a6" type=checkbox value="其他">其他<br/><br/>
-
+                    </li>
+                    <li>
+                        發票抬頭：<input type="text" name="receipt" size="20"/>&emsp;
+                        統一編號：<input type="text" name="taxId" size="20" placeholder="(可選填)"/><br/><br/>
                     </li>
 
+                    <p id=dot></p>
                     <li>
-                        發票抬頭：<input type="text" name="receipt" size="30"/>&emsp;
-                        統一編號：<input type="text" name="taxId" size="30"/><br/><br/>
                         <font size="3">保證金退款：</font><br/><br/>
-                        <input type="text" name="bankname" size="15"/>銀行/郵局&emsp;<input type="text" name="bankbranch" size="15"/>分行，<br/><br/>
-                        帳號：<input type="text" name="returnAcc" size="30"/>&emsp;
-                        戶名：<input type="text" name="accName" size="30"/><br/><br/>
+                        <input type="text" name="bankname" size="15"/>銀行/郵局&emsp;<input type="text" name="bankbranch" size="15"/>分行<br/><br/>
+                        帳號：<input type="text" name="returnAcc" size="30" placeholder="0000-0000-0000-0000"/>&emsp;
+                        戶名：<input type="text" name="accName" size="15"/><br/><br/>
                         匯款帳戶：中國信託忠孝分行，帳號185350003083&emsp;戶名：國立台北大學401專戶
                     </li><br/>
 
