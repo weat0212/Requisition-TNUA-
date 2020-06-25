@@ -169,10 +169,15 @@ input{
 
 #navi li:hover>ul {
 	display: block;
+	
 }
 
 #navi li a:hover {
 	background-color: rgba(248, 137, 39, 0.95);
+	margin-top: auto;
+	width: 205px;
+	height: 37px;
+	font-size: 22px;
 }
 
 #contents {
@@ -403,6 +408,10 @@ input{
 	clear:both;
 	margin-bottom:20px;
 	
+}
+
+.link_box h2{
+
 }
 
 .link_box h3 {

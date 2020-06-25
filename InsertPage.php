@@ -308,6 +308,8 @@ else{
 	$conn=sqlsrv_connect($serverName,$connectionInfo);
     // 申請人 Applicant
     $applyDate=$_POST['applyDate'];
+    $applicant=$_POST['applicant'];
+    $applySupv=$_POST['DeptSupv'];
 	$name=$_POST['contact'];
     $phone=$_POST['phone'];
 	$mail=$_POST['mail'];

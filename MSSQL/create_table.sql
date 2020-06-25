@@ -1,20 +1,37 @@
 CREATE TABLE Applicant(
 	applyDate date,
-	applicant nvarchar(30) PRIMARY KEY,
+	applicant nvarchar(30),
+	contact nvarchar(30),
 	applySupv  nvarchar(30),
 	address  nvarchar(50),
 	phone  nvarchar(30),
 	email  nvarchar(30),
 	receipt nvarchar(30) NULL,
-	taxID  nvarchar(30) NULL
+	taxID  nvarchar(30) NULL,
+	PRIMARY KEY(contact, applicant)
+)
+
+CREATE TABLE ApplyUnit(
+	applicant nvarchar(30),
+	contact nvarchar(30),
+	applySupv  nvarchar(30),
+	PRIMARY KEY(applicant, contact),
+	CONSTRAINT PFK4 
+     FOREIGN KEY (applicant, contact) 
+     REFERENCES Applicant(applicant, contact)
 )
 
 CREATE TABLE Margin(
-	applicant nvarchar(30) REFERENCES Applicant(applicant) PRIMARY KEY,
+	applicant nvarchar(30),
+	contact nvarchar(30),
 	bankName  nvarchar(30),
 	bankBranch  nvarchar(30),
 	account  nvarchar(30),
-	accountName  nvarchar(30)
+	accountName  nvarchar(30),
+	PRIMARY KEY(applicant, contact),
+	CONSTRAINT PFK5
+     FOREIGN KEY (applicant, contact) 
+     REFERENCES Applicant(applicant, contact)
 )
 
 CREATE TABLE Ordering(
