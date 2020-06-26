@@ -1,77 +1,53 @@
+CREATE DATABASE FinalProject;
+
 CREATE TABLE Applicant(
-	applyDate date,
 	applicant nvarchar(30),
 	contact nvarchar(30),
-	applySupv  nvarchar(30),
+	aplySupv nvarchar(30),
 	address  nvarchar(50),
 	phone  nvarchar(30),
 	email  nvarchar(30),
-	receipt nvarchar(30) NULL,
-	taxID  nvarchar(30) NULL,
-	PRIMARY KEY(contact, applicant)
+	PRIMARY KEY(applicant)
 )
 
-CREATE TABLE ApplyUnit(
-	applicant nvarchar(30),
-	contact nvarchar(30),
-	applySupv  nvarchar(30),
-	PRIMARY KEY(applicant, contact),
-	CONSTRAINT PFK4 
-     FOREIGN KEY (applicant, contact) 
-     REFERENCES Applicant(applicant, contact)
-)
-
-CREATE TABLE Margin(
-	applicant nvarchar(30),
-	contact nvarchar(30),
-	bankName  nvarchar(30),
-	bankBranch  nvarchar(30),
-	account  nvarchar(30),
-	accountName  nvarchar(30),
-	PRIMARY KEY(applicant, contact),
-	CONSTRAINT PFK5
-     FOREIGN KEY (applicant, contact) 
-     REFERENCES Applicant(applicant, contact)
+CREATE TABLE Rentaltime(
+	rentDate date PRIMARY KEY,
+	rehearsalShow nvarchar(30),
+	rentTime date, /*ª›¿À¨ddate*/
 )
 
 CREATE TABLE Ordering(
-	facility  nvarchar(30),
-	activity  nvarchar(30),
-	numofParts numeric,
-	rentalDate date,
-	record nvarchar(1),
-	closeTime datetime2,
-	actContent nvarchar(150),
-	attachment nvarchar(30)
-	PRIMARY KEY(facility, rentalDate)
-)
-
-CREATE TABLE Requisition(
-	R_Id INT PRIMARY KEY IDENTITY,
-	applyDate Date,
+	O_Id INT PRIMARY KEY IDENTITY,
+	aplyDate date,
 	applicant  nvarchar(30) REFERENCES Applicant(applicant),
-	facility  nvarchar(30) /*REFERENCES Ordering(facility) ,*/,
-	rentalDate date /*REFERENCES  Ordering(rentalDate)*/,
-	CONSTRAINT PFK 
-     FOREIGN KEY (facility, rentalDate) 
-     REFERENCES Ordering(facility, rentalDate)
+	facility  nvarchar(30),
+	aplyfor  nvarchar(30),
+	rentDate date REFERENCES Rentaltime(rentDate),
+	participant  nvarchar(30),
+	record  nvarchar(1),
+	stageTear  nvarchar(30),
+	actContent  nvarchar(150),
+	attachment  nvarchar(30),
+	receipt nvarchar(30),
+	taxId nvarchar(30),
 )
 
-CREATE TABLE Showtime(
-	facility  nvarchar(30) /*REFERENCES  Ordering(facility)*/,
-	rentalDate date  /*REFERENCES  Ordering(rentalDate)*/,
-	s_time  nvarchar(30) PRIMARY KEY,
-	CONSTRAINT PFK2 
-     FOREIGN KEY (facility, rentalDate) 
-     REFERENCES Ordering(facility, rentalDate)
+CREATE TABLE Margin(
+	O_Id INT REFERENCES Ordering(O_Id),
+	returnBank nvarchar(30),
+	returnBranch nvarchar(30),
+	returnAcc nvarchar(30),
+	PRIMARY KEY (O_Id)
 )
 
-CREATE TABLE Rehearsal(
-	facility  nvarchar(30) /*REFERENCES  Ordering(facility)*/,
-	rentalDate date  /*REFERENCES  Ordering(rentalDate)*/,
-	r_time  nvarchar(30) PRIMARY KEY,
-	CONSTRAINT PFK3
-     FOREIGN KEY (facility, rentalDate) 
-     REFERENCES Ordering(facility, rentalDate)
-)
+
+
+
+
+/*¿À¨d*/
+
+SELECT * FROM	Applicant;
+SELECT * FROM   Margin;
+SELECT * FROM	Ordering;
+SELECT * FROM	Rentaltime;
 
