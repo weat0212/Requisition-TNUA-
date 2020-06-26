@@ -56,12 +56,12 @@
                     <li>
                         <form>
                             （1）申請場地：
-                            <select name="aplyLoc">
+                            <select name="facility">
                                 　<option value="音樂廳">音樂廳</option>
                                 　<option value="戲劇廳">戲劇廳</option>
                                 　<option value="舞蹈廳">舞蹈廳</option>
                             </select>
-                            ，參與共<input type="number" name="numofParts" min="1" max="150"/>人
+                            ，參與共<input type="number" name="participant" min="1" max="150"/>人
                         </form>
                     </li>
                     <li>
@@ -133,8 +133,8 @@
 
                     <li>
                         （4）藝文展演與非藝文展演活動，自行安排錄音綠影（需另收2000元）：
-                        <input name="arrange" type=radio value="自行安排">自行安排&emsp;
-                        <input name="arrange" type=radio value="沒有安排">沒有安排<br/><br/>
+                        <input name="record" type=radio value="Y">自行安排&emsp;
+                        <input name="record" type=radio value="N">沒有安排<br/><br/>
                     </li>
                     <li>
                         （5）拆台時間：
@@ -144,17 +144,17 @@
                     </li>
                     <li>
                         （6）活動內容：<br/>
-                        <textarea name="actComment" rows="5" cols="33" placeholder="（節目名稱及簡介，需付企劃書詳細說明）"></textarea><br/><br/>
+                        <textarea name="actContent" rows="5" cols="33" placeholder="（節目名稱及簡介，需付企劃書詳細說明）"></textarea><br/><br/>
                         <input type="file" id="input"><br/><br/>
                     </li>
                     <li>
                         （7）附件：
-                        <input name="a1" type=checkbox value="演出企劃書">演出企劃書&ensp;
-                        <input name="a2" type=checkbox value="演出單位簡介">演出單位簡介&ensp;
-                        <input name="a3" type=checkbox value="租用時段表">租用時段表&ensp;
-                        <input name="a4" type=checkbox value="演出時間表">演出時間表&ensp;
-                        <input name="a5" type=checkbox value="視聽資料">視聽資料&ensp;
-                        <input name="a6" type=checkbox value="其他">其他<br/><br/>
+                        <input name="checkbox" type=checkbox value="演出企劃書">演出企劃書&ensp;
+                        <input name="checkbox" type=checkbox value="演出單位簡介">演出單位簡介&ensp;
+                        <input name="checkbox" type=checkbox value="租用時段表">租用時段表&ensp;
+                        <input name="checkbox" type=checkbox value="演出時間表">演出時間表&ensp;
+                        <input name="checkbox" type=checkbox value="視聽資料">視聽資料&ensp;
+                        <input name="checkbox" type=checkbox value="其他">其他<br/><br/>
                     </li>
                     <li>
                         發票抬頭：<input type="text" name="receipt" size="20"/>&emsp;

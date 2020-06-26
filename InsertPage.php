@@ -60,28 +60,28 @@ function chk_B($dat){
 function timemapping($i){
     // 對照時間表
     switch($i){
-        case 1:
+        case '1':
             return '08:00~09:00';
             break;
-        case 2:
+        case '2':
             return '09:00~12:00';
             break;
-        case 3:
+        case '3':
             return '12:00~13:00';
             break;
-        case 4:
+        case '4':
             return '13:00~17:00';
             break;
-        case 5:
+        case '5':
             return '17:00~18:00';
             break;
-        case 6:
+        case '6':
             return '18:00~22:00';
             break;
-        case 7:
+        case '7':
             return '22:00~24:00';
             break;
-        case 8:
+        case '8':
             return '00:00~02:00';
             break;
     }
@@ -100,6 +100,10 @@ function chk_priori($A, $B){
     static $count = false;
     // ToDo:檢查A早於B
     // 未完成
+}
+
+function datetoString($dat){
+    return (string)$dat;
 }
 
 // #### Main ####
@@ -195,7 +199,7 @@ else{
         echo "<h2>基本資料未輸入尚未齊全，請重新登錄資料!</h2></br>";
         $flag=false;
     }
-    if(empty($_POST['aplyLoc'])||empty($_POST['numofParts'])||empty($_POST['aplyfor'])){
+    if(empty($_POST['facility'])||empty($_POST['participant'])||empty($_POST['aplyfor'])){
         echo "<h2>申請場地資料未輸入尚未齊全，請重新登錄資料!</h2></br>";
         $flag=false;
     }
@@ -208,15 +212,15 @@ else{
         }
     }else{$flag=false;}
 
-    // 附件資料判定
-    $attIsEmp=true;
-    for($i=1;$i<=6;$i++){
-        if(!empty($_POST['a'.(string)$i])){
-            $attIsEmp=false;
-        }
-    }
+    // // 附件資料判定
+    // $attIsEmp=true;
+    // for($i=1;$i<=6;$i++){
+    //     if(!empty($_POST['a'.(string)$i])){
+    //         $attIsEmp=false;
+    //     }
+    // }
     
-    if(empty($_POST['arrange'])||empty($_POST['clstmeStart'])||empty($_POST['clstmeEnd'])||empty($_POST['actComment'])||$attIsEmp==true){
+    if(empty($_POST['record'])||empty($_POST['clstmeStart'])||empty($_POST['clstmeEnd'])||empty($_POST['actContent'])){
         echo "<h2>申請內容資料未輸入尚未齊全，請重新登錄資料!</h2></br>";
         $flag=false;
     }
@@ -305,20 +309,106 @@ else{
 <?php
 	$serverName = "DESKTOP-PGTDFJ7";
 	$connectionInfo = array( "Database"=>"FinalProject", "UID"=>"andywang", "PWD"=>"andy0212", "CharacterSet" => "UTF-8");
-	$conn=sqlsrv_connect($serverName,$connectionInfo);
-    // 申請人 Applicant
-    $applyDate=$_POST['applyDate'];
+    $conn=sqlsrv_connect($serverName,$connectionInfo);
+    
+    // 申請單位資料 Applicant
     $applicant=$_POST['applicant'];
-    $applySupv=$_POST['DeptSupv'];
-	$name=$_POST['contact'];
+    $contact=$_POST['contact'];
+    $aplySupv=$_POST['DeptSupv'];
+	$address=$_POST['address'];
     $phone=$_POST['phone'];
-	$mail=$_POST['mail'];
-    $sql="INSERT INTO dbo.comment(applyDate,name,phone,email) VALUES('$applyDate','$name','$phone','$mail')";
-    // 保證金 Margin
-    // 申請單 Requisition
-    // 訂單 Ordering
-    // 排演時間 Showtime
-    // 演出時間 Rehearsal
-	$quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
+    $email=$_POST['mail'];
+    $sql="INSERT INTO dbo.Applicant(applicant,contact,aplySupv,address,phone,email) VALUES('$applicant','$contact','$aplySupv','$address','$phone','$email')";
+    $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
+
+
+    // 預約資訊 Ordering
+    $aplyDate=datetoString($_POST['applyDate']);
+    $facility=$_POST['facility'];
+    $aplyfor=$_POST['aplyfor'];
+    $participant=$_POST['participant'];
+    $record=$_POST['record'];
+    //$stageTear=datetoString($_POST['clstmeStart']).'-'.datetoString($_POST['clstmeEnd']);
+    $stageTear=datetoString($_POST['clstmeStart']);
+    $actContent=$_POST['actContent'];
+    $attachment=$_POST['checkbox'];
+    $receipt=$_POST['receipt'];
+    $taxId=$_POST['taxId'];
+    
+    //Stop Constraint
+    // $constraintSrt='USE FinalProject 
+    // GO 
+    // EXEC sp_MSforeachtable @command1="ALTER TABLE ? NOCHECK CONSTRAINT ALL" 
+    // GO';
+    // $constraintEnd='USE FinalProject
+    // GO 
+    // EXEC sp_MSforeachtable @command1="ALTER TABLE ? WITH NOCHECK CHECK CONSTRAINT ALL" 
+    // GO';
+    // $quer=sqlsrv_query($conn, $constraintSrt) or die("sql error".sqlsrv_errors());
+
+    $sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+    $params=array('$aplyDate','$applicant','$facility','$aplyfor','$participant','$record','$stageTear','$actContent','$attachment','$receipt','$taxId');
+    if (sqlsrv_query($conn, $sql, $params)) {  
+        echo "Statement executed.\n";  
+        $quer=sqlsrv_query($conn, $constraintEnd) or die("sql error".sqlsrv_errors());
+    } else {  
+        echo "Error in statement execution.\n";  
+        die(print_r(sqlsrv_errors(), true));  
+    }  
+    // 租用時段 Rentaltime
+    // 日期變數:dat1  時段Array:D1A/B
+    // ERROR:$quer
+    // function schedule_insert($rentDate, $rehearsalShow, $rentTime){
+    //     $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES('$rentDate','$rehearsalShow','$rentTime')";
+    //     $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
+    // }
+
+    for($i=1;$i<=3;$i++){
+        $d='dat'.(string)$i;
+        if(!empty($_POST[$d])){
+            $rentTimeA=$GLOBALS['d'.(string)$i.'A'];
+            $rentTimeB=$GLOBALS['d'.(string)$i.'B'];
+
+            foreach($rentTimeA as $val){
+                $val=datetoString($val);
+                $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES(?,?,?)";
+                $params=array($_POST[$d],'Rehearsal',$val);
+                if (sqlsrv_query($conn, $sql, $params)) {  
+                    echo "Statement executed.\n";  
+                } else {  
+                    echo "Error in statement execution.\n";  
+                    die(print_r(sqlsrv_errors(), true));  
+                }  
+            }
+            foreach($rentTimeB as $val){
+                $val=datetoString($val);
+                $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES(?,?,?)";
+                $params=array($_POST[$d],'Show',$val);
+                // $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
+                if (sqlsrv_query($conn, $sql, $params)) {  
+                    echo "Statement executed.\n";  
+                } else {  
+                    echo "Error in statement execution.\n";  
+                    die(print_r(sqlsrv_errors(), true));  
+                }
+            }
+        }
+    }
+
+    // 保證金退款 Margin
+    $returnBank=$_POST['bankname'];
+    $returnBranch=$_POST['bankbranch'];
+    $returnAcc=$_POST['returnAcc'];
+    $accName==$_POST['accName'];
+    //$quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
+
+
+    // 連線用指令
+	// $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
+    
+    /* Free connection resources. */  
+    sqlsrv_close($conn);  
+    ?> 
 ?>
+
 </body></html>
