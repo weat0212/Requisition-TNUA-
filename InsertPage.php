@@ -102,10 +102,6 @@ function chk_priori($A, $B){
     // 未完成
 }
 
-function datetoString($dat){
-    return (string)$dat;
-}
-
 // #### Main ####
 // 時段表部分
 global $d1A;
@@ -307,11 +303,24 @@ else{
 <!-- 下一步：SQL存取 -->
 <!-- 連線認證以及SQL INSERT -->
 <?php
-	$serverName = "DESKTOP-PGTDFJ7";
-	$connectionInfo = array( "Database"=>"FinalProject", "UID"=>"andywang", "PWD"=>"andy0212", "CharacterSet" => "UTF-8");
-    $conn=sqlsrv_connect($serverName,$connectionInfo);
+//Stop Constraint
+// $constraintSrt='USE FinalProject 
+// GO 
+// EXEC sp_MSforeachtable @command1="ALTER TABLE ? NOCHECK CONSTRAINT ALL" 
+// GO';
+// $constraintEnd='USE FinalProject
+// GO 
+// EXEC sp_MSforeachtable @command1="ALTER TABLE ? WITH NOCHECK CHECK CONSTRAINT ALL" 
+// GO';
+// $quer=sqlsrv_query($conn, $constraintSrt) or die("sql error".sqlsrv_errors());
+
+$serverName = "DESKTOP-PGTDFJ7";
+$connectionInfo = array( "Database"=>"FinalProject", "UID"=>"andywang", "PWD"=>"andy0212", "CharacterSet" => "UTF-8");
+$conn=sqlsrv_connect($serverName,$connectionInfo);
     
+    // --------------------
     // 申請單位資料 Applicant
+    // --------------------
     $applicant=$_POST['applicant'];
     $contact=$_POST['contact'];
     $aplySupv=$_POST['DeptSupv'];
@@ -320,86 +329,79 @@ else{
     $email=$_POST['mail'];
     $sql="INSERT INTO dbo.Applicant(applicant,contact,aplySupv,address,phone,email) VALUES('$applicant','$contact','$aplySupv','$address','$phone','$email')";
     $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
+    // OK
 
-
+    // -------------------
     // 預約資訊 Ordering
-    $aplyDate=datetoString($_POST['applyDate']);
-    $facility=$_POST['facility'];
-    $aplyfor=$_POST['aplyfor'];
-    $participant=$_POST['participant'];
-    $record=$_POST['record'];
-    //$stageTear=datetoString($_POST['clstmeStart']).'-'.datetoString($_POST['clstmeEnd']);
-    $stageTear=datetoString($_POST['clstmeStart']);
-    $actContent=$_POST['actContent'];
-    $attachment=$_POST['checkbox'];
-    $receipt=$_POST['receipt'];
-    $taxId=$_POST['taxId'];
-    
-    //Stop Constraint
-    // $constraintSrt='USE FinalProject 
-    // GO 
-    // EXEC sp_MSforeachtable @command1="ALTER TABLE ? NOCHECK CONSTRAINT ALL" 
-    // GO';
-    // $constraintEnd='USE FinalProject
-    // GO 
-    // EXEC sp_MSforeachtable @command1="ALTER TABLE ? WITH NOCHECK CHECK CONSTRAINT ALL" 
-    // GO';
-    // $quer=sqlsrv_query($conn, $constraintSrt) or die("sql error".sqlsrv_errors());
+    //--------------------
+    $aplyDate=(string)$_POST['applyDate'];
+    $facility=(string)$_POST['facility'];
+    $aplyfor=(string)$_POST['aplyfor'];
+    $participant=(string)$_POST['participant'];
+    $record=(string)$_POST['record'];
+    $stageTear=(string)$_POST['clstmeStart'].'-'.(string)$_POST['clstmeEnd'];
+    // $stageTear=(string)$_POST['clstmeStart'];
+    $actContent=(string)$_POST['actContent'];
+    $attachment=(string)$_POST['checkbox'];
+    $receipt=(string)$_POST['receipt'];
+    $taxId=(string)$_POST['taxId'];
 
+    // $sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES('aplyDate','appl','facility','aplyfor','participant','record','stageTear','actContent','attachment','receipt','taxId')";
     $sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-    $params=array('$aplyDate','$applicant','$facility','$aplyfor','$participant','$record','$stageTear','$actContent','$attachment','$receipt','$taxId');
-    if (sqlsrv_query($conn, $sql, $params)) {  
-        echo "Statement executed.\n";  
-        $quer=sqlsrv_query($conn, $constraintEnd) or die("sql error".sqlsrv_errors());
-    } else {  
-        echo "Error in statement execution.\n";  
-        die(print_r(sqlsrv_errors(), true));  
-    }  
+    // $params=array('$aplyDate','$applicant','$facility','$aplyfor','$participant','$record','$stageTear','$actContent','$attachment','$receipt','$taxId');
+    $params=array($aplyDate,$applicant,$facility,$aplyfor,$participant,$record,$stageTear,$actContent,$attachment,$receipt,$taxId);
+    $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
+    
+    // OK
+
+    // --------------------
     // 租用時段 Rentaltime
+    // --------------------
     // 日期變數:dat1  時段Array:D1A/B
     // ERROR:$quer
     // function schedule_insert($rentDate, $rehearsalShow, $rentTime){
     //     $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES('$rentDate','$rehearsalShow','$rentTime')";
     //     $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
     // }
+    
+    function lastId($queryID) {
+        sqlsrv_next_result($queryID);
+        sqlsrv_fetch($queryID);
+        return sqlsrv_get_field($queryID, 0);
+    } 
+
 
     for($i=1;$i<=3;$i++){
         $d='dat'.(string)$i;
         if(!empty($_POST[$d])){
             $rentTimeA=$GLOBALS['d'.(string)$i.'A'];
             $rentTimeB=$GLOBALS['d'.(string)$i.'B'];
+            $tmp=(string)$_POST[$d];
 
             foreach($rentTimeA as $val){
-                $val=datetoString($val);
-                $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES(?,?,?)";
-                $params=array($_POST[$d],'Rehearsal',$val);
-                if (sqlsrv_query($conn, $sql, $params)) {  
-                    echo "Statement executed.\n";  
-                } else {  
-                    echo "Error in statement execution.\n";  
-                    die(print_r(sqlsrv_errors(), true));  
-                }  
+                $val=(string)$val;
+                $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES(?,?,?);";
+                $params=array($tmp,'Rehearsal',$val);
+                $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
+                // echo lastId($quer);
             }
             foreach($rentTimeB as $val){
-                $val=datetoString($val);
-                $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES(?,?,?)";
-                $params=array($_POST[$d],'Show',$val);
-                // $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
-                if (sqlsrv_query($conn, $sql, $params)) {  
-                    echo "Statement executed.\n";  
-                } else {  
-                    echo "Error in statement execution.\n";  
-                    die(print_r(sqlsrv_errors(), true));  
-                }
+                $val=(string)$val;
+                $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES(?,?,?);";
+                $params=array($tmp,'Show',$val);
+                $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
+                // echo lastId($quer);
             }
         }
     }
 
+    // --------------------
     // 保證金退款 Margin
-    $returnBank=$_POST['bankname'];
-    $returnBranch=$_POST['bankbranch'];
-    $returnAcc=$_POST['returnAcc'];
-    $accName==$_POST['accName'];
+    // --------------------
+    $returnBank=(string)$_POST['bankname'];
+    $returnBranch=(string)$_POST['bankbranch'];
+    $returnAcc=(string)$_POST['returnAcc'];
+    $accName=(string)$_POST['accName'];
     //$quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
 
 
@@ -409,6 +411,6 @@ else{
     /* Free connection resources. */  
     sqlsrv_close($conn);  
     ?> 
-?>
+
 
 </body></html>

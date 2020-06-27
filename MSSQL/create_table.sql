@@ -60,9 +60,9 @@ USE FinalProject
 GO 
 EXEC sp_MSforeachtable @command1="ALTER TABLE ? NOCHECK CONSTRAINT ALL" 
 GO
-INSERT INTO dbo.Applicant(applicant,contact,aplySupv,address,phone,email) VALUES('123333','andy','aplySupv','address','phone','email')
+INSERT INTO dbo.Applicant(applicant,contact,aplySupv,address,phone,email) VALUES('7','andy','aplySupv','address','phone','email')
 /*SET IDENTITY_INSERT dbo.Applicant ON*/
-INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES('aplyd','123333','12','123','12','Y','123','12','123','1','2')
+INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES('2020-06-26','7','音樂廳','藝文展演活動','1','Y','2020-06-19T00:30','123','演出企劃書','123','123')
 USE FinalProject
 GO 
 EXEC sp_MSforeachtable @command1="ALTER TABLE ? WITH NOCHECK CHECK CONSTRAINT ALL" 
