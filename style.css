@@ -279,20 +279,29 @@ input{
 #footer {
 	clear:both;
 	height:60px;
+	width: 100%;
 	padding-top:15px;
 	color:#FFFFFF;
 	font-size: 14px;
-	text-align:left;
-	padding-left: 65%;
+	/* text-align:left; */
+	/* bottom: 0;
+	position: absolute; */
 	background-color:  rgba(255,255,255,0.1);
+	/* box-sizing: border-box; */
+	position: relative;
+	margin-top: 0;
 }
 
-#footer address {
+#footer p{
+	text-align: left;
+	margin-left: 70%;
+}
+/* #footer address {
 	font-size:10px;
 	font-style:normal;
 	text-align:right;
 	color:#FFFFFF;
-}
+} */
 
 #dot {
 	border-bottom: dotted 2px #cfcfcf;;

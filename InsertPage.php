@@ -415,6 +415,7 @@ for($i=1;$i<=3;$i++){
 // echo lastId($quer);
 
 /* Free connection resources. */  
+sqlsrv_free_stmt( $quer);   
 sqlsrv_close($conn);  
 
 ?> 
