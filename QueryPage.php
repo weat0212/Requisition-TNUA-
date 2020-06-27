@@ -15,7 +15,7 @@
 
 <body id="wrapper-02">
   <div id="header">
-        <h1>查詢場地租用詳情</h1>
+        <h1><a href="QueryPage.html">查詢場地租用詳情</a></h1>
   </div>
 
 
