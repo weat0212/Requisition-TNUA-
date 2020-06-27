@@ -314,103 +314,110 @@ else{
 // GO';
 // $quer=sqlsrv_query($conn, $constraintSrt) or die("sql error".sqlsrv_errors());
 
+
 $serverName = "DESKTOP-PGTDFJ7";
 $connectionInfo = array( "Database"=>"FinalProject", "UID"=>"andywang", "PWD"=>"andy0212", "CharacterSet" => "UTF-8");
 $conn=sqlsrv_connect($serverName,$connectionInfo);
     
-    // --------------------
-    // 申請單位資料 Applicant
-    // --------------------
-    $applicant=$_POST['applicant'];
-    $contact=$_POST['contact'];
-    $aplySupv=$_POST['DeptSupv'];
-	$address=$_POST['address'];
-    $phone=$_POST['phone'];
-    $email=$_POST['mail'];
-    $sql="INSERT INTO dbo.Applicant(applicant,contact,aplySupv,address,phone,email) VALUES('$applicant','$contact','$aplySupv','$address','$phone','$email')";
-    $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
-    // OK
+// --------------------
+// 申請單位資料 Applicant
+// --------------------
+$applicant=$_POST['applicant'];
+$contact=$_POST['contact'];
+$aplySupv=$_POST['DeptSupv'];
+$address=$_POST['address'];
+$phone=$_POST['phone'];
+$email=$_POST['mail'];
+$sql="INSERT INTO dbo.Applicant(applicant,contact,aplySupv,address,phone,email) VALUES('$applicant','$contact','$aplySupv','$address','$phone','$email')";
+$quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
+// OK
 
-    // -------------------
-    // 預約資訊 Ordering
-    //--------------------
-    $aplyDate=(string)$_POST['applyDate'];
-    $facility=(string)$_POST['facility'];
-    $aplyfor=(string)$_POST['aplyfor'];
-    $participant=(string)$_POST['participant'];
-    $record=(string)$_POST['record'];
-    $stageTear=(string)$_POST['clstmeStart'].'-'.(string)$_POST['clstmeEnd'];
-    // $stageTear=(string)$_POST['clstmeStart'];
-    $actContent=(string)$_POST['actContent'];
-    $attachment=(string)$_POST['checkbox'];
-    $receipt=(string)$_POST['receipt'];
-    $taxId=(string)$_POST['taxId'];
+// -------------------
+// 預約資訊 Ordering
+//--------------------
+$aplyDate=(string)$_POST['applyDate'];
+$facility=(string)$_POST['facility'];
+$aplyfor=(string)$_POST['aplyfor'];
+$participant=(string)$_POST['participant'];
+$record=(string)$_POST['record'];
+$stageTear=(string)$_POST['clstmeStart'].'-'.(string)$_POST['clstmeEnd'];
+// $stageTear=(string)$_POST['clstmeStart'];
+$actContent=(string)$_POST['actContent'];
+$attachment=(string)$_POST['checkbox'];
+$receipt=(string)$_POST['receipt'];
+$taxId=(string)$_POST['taxId'];
+$returnBank=(string)$_POST['bankname'];
+$returnBranch=(string)$_POST['bankbranch'];
+$returnAcc=(string)$_POST['returnAcc'];
+$accName=(string)$_POST['accName'];
 
-    // $sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES('aplyDate','appl','facility','aplyfor','participant','record','stageTear','actContent','attachment','receipt','taxId')";
-    $sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
-    // $params=array('$aplyDate','$applicant','$facility','$aplyfor','$participant','$record','$stageTear','$actContent','$attachment','$receipt','$taxId');
-    $params=array($aplyDate,$applicant,$facility,$aplyfor,$participant,$record,$stageTear,$actContent,$attachment,$receipt,$taxId);
-    $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
-    
-    // OK
-
-    // --------------------
-    // 租用時段 Rentaltime
-    // --------------------
-    // 日期變數:dat1  時段Array:D1A/B
-    // ERROR:$quer
-    // function schedule_insert($rentDate, $rehearsalShow, $rentTime){
+// $sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES('aplyDate','appl','facility','aplyfor','participant','record','stageTear','actContent','attachment','receipt','taxId')";
+$sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId,returnBank,returnBranch,returnAcc,accName) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);SELECT IDENT_CURRENT('dbo.Ordering')";
+// $params=array('$aplyDate','$applicant','$facility','$aplyfor','$participant','$record','$stageTear','$actContent','$attachment','$receipt','$taxId');
+$params=array($aplyDate,$applicant,$facility,$aplyfor,$participant,$record,$stageTear,$actContent,$attachment,$receipt,$taxId,$returnBank,$returnBranch,$returnAcc,$accName);
+$quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
+// OK
+// --------------------
+// 租用時段 Rentaltime
+// --------------------
+// 日期變數:dat1  時段Array:D1A/B
+// ERROR:$quer
+// function schedule_insert($rentDate, $rehearsalShow, $rentTime){
     //     $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES('$rentDate','$rehearsalShow','$rentTime')";
     //     $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
     // }
     
-    function lastId($queryID) {
-        sqlsrv_next_result($queryID);
-        sqlsrv_fetch($queryID);
-        return sqlsrv_get_field($queryID, 0);
-    } 
+function lastId($queryID) {
+    sqlsrv_next_result($queryID);
+    sqlsrv_fetch($queryID);
+    return sqlsrv_get_field($queryID, 0);
+} 
 
+$lastID=(string)lastId($quer);
+echo $lastID;
+    
 
-    for($i=1;$i<=3;$i++){
-        $d='dat'.(string)$i;
-        if(!empty($_POST[$d])){
-            $rentTimeA=$GLOBALS['d'.(string)$i.'A'];
-            $rentTimeB=$GLOBALS['d'.(string)$i.'B'];
-            $tmp=(string)$_POST[$d];
+for($i=1;$i<=3;$i++){
+    $d='dat'.(string)$i;
+    if(!empty($_POST[$d])){
+        $rentTimeA=$GLOBALS['d'.(string)$i.'A'];
+        $rentTimeB=$GLOBALS['d'.(string)$i.'B'];
+        $tmp=(string)$_POST[$d];
 
-            foreach($rentTimeA as $val){
-                $val=(string)$val;
-                $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES(?,?,?);";
-                $params=array($tmp,'Rehearsal',$val);
-                $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
-                // echo lastId($quer);
-            }
-            foreach($rentTimeB as $val){
-                $val=(string)$val;
-                $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime) VALUES(?,?,?);";
-                $params=array($tmp,'Show',$val);
-                $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
-                // echo lastId($quer);
-            }
+        foreach($rentTimeA as $val){
+            $val=(string)$val;
+            $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime,O_Id) VALUES(?,?,?,?);";
+            $params=array($tmp,'Rehearsal',$val,$lastID);
+            $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
+        }
+        foreach($rentTimeB as $val){
+            $val=(string)$val;
+            $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime,O_Id) VALUES(?,?,?,?);";
+            $params=array($tmp,'Show',$val,$lastID);
+            $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
         }
     }
-
-    // --------------------
-    // 保證金退款 Margin
-    // --------------------
-    $returnBank=(string)$_POST['bankname'];
-    $returnBranch=(string)$_POST['bankbranch'];
-    $returnAcc=(string)$_POST['returnAcc'];
-    $accName=(string)$_POST['accName'];
-    //$quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
+}
 
 
-    // 連線用指令
-	// $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
-    
-    /* Free connection resources. */  
-    sqlsrv_close($conn);  
-    ?> 
+// --------------------
+// 保證金退款 Margin
+// --------------------
+// $returnBank=(string)$_POST['bankname'];
+// $returnBranch=(string)$_POST['bankbranch'];
+// $returnAcc=(string)$_POST['returnAcc'];
+// $accName=(string)$_POST['accName'];
+// $sql="INSERT INTO dbo.Margin(returnBank,returnBranch,returnAcc,accName) VALUES(?,?,?,?); SELECT IDENT_CURRENT('Ordering')";
+// $params=array($returnBank,$returnBranch,$returnAcc,$accName);
+// // $sql="INSERT INTO dbo.Margin(returnBank,returnBranch,returnAcc,accName) VALUES('$returnBank','$returnBranch','$returnAcc','$accName'))";
+// // var_dump($sql);
+// $quer=sqlsrv_query($conn, $sql, $params) or die("sql error".sqlsrv_errors());
+// echo lastId($quer);
+
+/* Free connection resources. */  
+sqlsrv_close($conn);  
+
+?> 
 
 
 </body></html>
