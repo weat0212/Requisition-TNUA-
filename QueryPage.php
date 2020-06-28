@@ -30,17 +30,13 @@ function toText($type){
     elseif($type=='Rehearsal'){return '裝台排練時段';}
 }
 
-function YN($type){
-    if($type=='Y'){return '自行安排';}
-    elseif($type=='N'){return '沒有安排';}
-}
 
-if(!isset($_POST['applicant'])||!isset($_POST['contact'])||!isset($_POST['phone'])||!isset($_POST['applyDate'])){
+if(!isset($_POST['applicant'])||!isset($_POST['contact'])||!isset($_POST['phone'])||!isset($_POST['aplyDate'])){
     echo "<h2>資料變數錯誤</h2>";
     exit();
 }
 else{
-    if(empty($_POST['applicant'])||empty($_POST['contact'])||empty($_POST['phone'])||empty($_POST['applicant'])){
+    if(empty($_POST['applicant'])||empty($_POST['contact'])||empty($_POST['phone'])||empty($_POST['aplyDate'])){
         echo "<h2>資料輸入不完整</h2>";
         exit();
     }
@@ -49,12 +45,12 @@ else{
         $connectionInfo = array( "Database"=>"FinalProject", "UID"=>"andywang", "PWD"=>"andy0212", "CharacterSet" => "UTF-8");
         $conn=sqlsrv_connect($serverName,$connectionInfo);
         
-        $applyDate=(string)$_POST['applyDate'];
+        $aplyDate=(string)$_POST['aplyDate'];
         $applicant=(string)$_POST['applicant'];
         $contact=(string)$_POST['contact'];
         $phone=(string)$_POST['phone'];
 
-        $sql="SELECT * FROM dbo.Applicant WHERE applicant='$applicant'";
+        $sql="SELECT * FROM dbo.Applicant WHERE applicant='$applicant' AND contact='$contact' AND phone='$phone'";
         $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
         
         while($row=sqlsrv_fetch_array($quer)){
@@ -67,7 +63,7 @@ else{
             echo '<li>'.'e-mail：'.$row['email'].'</li>';
         }
 
-        $sql="SELECT * FROM dbo.Ordering WHERE applicant='$applicant' AND aplyDate='$applyDate'";
+        $sql="SELECT * FROM dbo.Ordering WHERE applicant='$applicant' AND aplyDate='$aplyDate'";
         $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
         
         while($row=sqlsrv_fetch_array($quer)){
@@ -77,7 +73,7 @@ else{
             echo '<li>'.'申請場地：'.$row['facility'].'</li>';
             echo '<li>'.'申請項目：'.$row['aplyfor'].'</li>';
             echo '<li>'.'參與人數：'.$row['participant'].'</li>';
-            echo '<li>'.'錄音錄影：'.YN($row['record']).'</li>';
+            echo '<li>'.'錄音錄影：'.$row['record'].'</li>';
             echo '<li>'.'拆台時間：'.$row['stageTear'].'</li>';
             echo '<li>'.'活動內容：'.$row['actContent'].'</li>';
             echo '<li>'.'附件：'.$row['attachment'].'</li>';

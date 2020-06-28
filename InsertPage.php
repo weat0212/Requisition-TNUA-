@@ -297,6 +297,7 @@ else{
         ?>
     </p>
     </div>
+    <input type='button' value="回首頁" onclick="location.href='HomePage.html'">
 </div>
 
 
@@ -419,6 +420,5 @@ sqlsrv_free_stmt( $quer);
 sqlsrv_close($conn);  
 
 ?> 
-
 
 </body></html>
