@@ -353,8 +353,8 @@ $returnAcc=(string)$_POST['returnAcc'];
 $accName=(string)$_POST['accName'];
 
 // $sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES('aplyDate','appl','facility','aplyfor','participant','record','stageTear','actContent','attachment','receipt','taxId')";
-$sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId,returnBank,returnBranch,returnAcc,accName) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);SELECT IDENT_CURRENT('dbo.Ordering')";
-// $params=array('$aplyDate','$applicant','$facility','$aplyfor','$participant','$record','$stageTear','$actContent','$attachment','$receipt','$taxId');
+$sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId,returnBank,returnBranch,returnAcc,accName) 
+VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);SELECT IDENT_CURRENT('dbo.Ordering')";
 $params=array($aplyDate,$applicant,$facility,$aplyfor,$participant,$record,$stageTear,$actContent,$attachment,$receipt,$taxId,$returnBank,$returnBranch,$returnAcc,$accName);
 $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
 // OK

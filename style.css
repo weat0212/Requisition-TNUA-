@@ -185,6 +185,7 @@ input{
 	width:1000px;
 	margin:10px auto 30px auto;
 	padding:20px;
+	padding-bottom: 50px;
 	color: #FFFFFF;
 	/* background-color:#FFFFFF; */
 	background: url(images/Melamine-wood-002.png);
@@ -294,7 +295,7 @@ input{
 
 #footer p{
 	text-align: left;
-	margin-left: 70%;
+	margin-left: 60%;
 }
 /* #footer address {
 	font-size:10px;
@@ -305,6 +306,30 @@ input{
 
 #dot {
 	border-bottom: dotted 2px #cfcfcf;;
+}
+
+#result{
+	width:600px;
+	margin:0 auto;
+}
+
+#result li{
+	position: relative;
+	display: block;
+	padding: .4em .4em .4em 2em;
+	/* *padding: .4em; */
+	margin: .5em 0;
+	background: #f0f0f083;
+	color: rgb(0, 0, 0);
+	font-weight: bold;
+	font-size: 16px;
+	text-decoration: none;
+	transition: all .4s ease-in-out;
+	border-radius: 15%;
+}
+
+#result li:hover{
+	background: #f0f0f0d7;
 }
 
 .link_box div{
@@ -483,4 +508,12 @@ input{
 
 #manual{
 	width: 1050;
+}
+
+#manual h2:hover{
+	/* transition-delay:1s; */
+	transition: all .3s ease-in-out;
+	font-size: 30px;
+	color: #666666;
+	text-decoration: underline;
 }

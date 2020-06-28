@@ -54,7 +54,7 @@ else{
         $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
         
         while($row=sqlsrv_fetch_array($quer)){
-            echo '<ul>';
+            echo '<ul id=result>';
             echo '<li>'.'申請單位：'.$row['applicant'].'</li>';
             echo '<li>'.'申請聯絡人：'.$row['contact'].'</li>';
             echo '<li>'.'申請主管：'.$row['aplySupv'].'</li>';
@@ -96,6 +96,7 @@ else{
             echo '<li>'.'租借時間：'.$row['rentTime'].'</li>';
             echo '</br>';
         }  
+        echo '</ul>';
     }
 }
 sqlsrv_free_stmt($quer);  
