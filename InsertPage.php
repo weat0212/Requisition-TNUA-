@@ -57,6 +57,7 @@ function chk_B($dat){
     return $time;
 }
 
+
 function timemapping($i){
     // 對照時間表
     switch($i){
@@ -91,15 +92,26 @@ function time_compar($dat1, $dat2){
     if($dat1<$dat2){return true;}else{return false;}
 }
 
-function chk_rep_time(){
-    // ToDo:SQL查詢是否有重複值
-    // 未完成
+function chk_rep_time($t1, $t2){
+    // ToDo:SQL查詢是
+    $sql="SELECT * FROM dbo.Applicant";
+    $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
 }
 
 function chk_priori($A, $B){
     static $count = false;
     // ToDo:檢查A早於B
     // 未完成
+}
+
+function isEmpty($chk_A, $chk_B)
+    if(empty($chk_A)){
+        echo"未填入裝台排練資料";
+        exit();
+    }elseif(empty($chk_B)){
+        echo"未填入演出資料";
+        exit();
+    }
 }
 
 // #### Main ####
@@ -120,6 +132,7 @@ if(empty($_POST['dat1']) and empty($_POST['dat2']) and empty($_POST['dat3'])){
             if($i==1){
                 $d1A = chk_A($i);
                 $d1B = chk_B($i);
+                isEmpty($d1A, $d1B);
                 echo $_POST['dat'.(string)$i]."，您預約的排練時段：";
                 foreach($d1A as $val){
                     echo $val.' ';
@@ -133,6 +146,7 @@ if(empty($_POST['dat1']) and empty($_POST['dat2']) and empty($_POST['dat3'])){
             if($i==2){
                 $d2A = chk_A($i);
                 $d2B = chk_B($i);
+                isEmpty($d2A, $d2B);
                 echo $_POST['dat'.(string)$i]."，您預約的排練時段：";
                 foreach($d2A as $val){
                     echo $val.' ';
@@ -146,6 +160,7 @@ if(empty($_POST['dat1']) and empty($_POST['dat2']) and empty($_POST['dat3'])){
             if($i==3){
                 $d3A = chk_A($i);
                 $d3B = chk_B($i);
+                isEmpty($d3A, $d3B);
                 echo $_POST['dat'.(string)$i]."，您預約的排練時段：";
                 foreach($d3A as $val){
                     echo $val.' ';
