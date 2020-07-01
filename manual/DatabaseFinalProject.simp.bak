@@ -27,7 +27,7 @@
     <entity-ids>
       <counter>
         <item-type type-id="group" type="AbstractElementGroup" />
-        <value>2818</value>
+        <value>2841</value>
       </counter>
       <counter>
         <item-type type-id="erd-chen-entity" type="ErdChenEntity" />
@@ -67,7 +67,7 @@
       </counter>
       <counter>
         <item-type type-id="erd-relationship" type="ErdRelation" />
-        <value>23</value>
+        <value>24</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -990,7 +990,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="entity-relationship" id="p5e1b1ad899ee49e0860e75c8a1214f65_903712943" name="EntityRelationshipDiagram2NF(new)" order-index="7" overview-order-index="5" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false">
+      <diagram type="entity-relationship" id="p5e1b1ad899ee49e0860e75c8a1214f65_903712943" name="EntityRelationshipDiagram2NF(new)" order-index="7" overview-order-index="5" uid="" show-id="false" show-name="true" show-parent-name="false" name-style="local-auto-parents" show-stereotypes="true" show-tagged-values="false" show-template-parameters="true" show-fields="true" show-empty-compartments="true" show-special-indicators="false" show-attributes="true" show-attribute-visibility="true" show-operations="true" show-operation-parameters="true" show-operation-visibility="true" show-nullability="true" show-sequence-number="false" show-extension-points="false" show-relationship-texts="true" show-description="false" show-field-description="false" auto-routed-paths="false" view-location="106,-145">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -1002,7 +1002,7 @@
           </authors>
           <description />
           <creation-date>06/30/2020 16:43:39</creation-date>
-          <change-date>06/30/2020 16:59:37</change-date>
+          <change-date>06/30/2020 17:02:18</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
@@ -1051,12 +1051,7 @@
             <attributes>
               <attribute uid="a87ee0aedb8484abf8f5d8955100478e0763" cid="ELEM064" name="申請單編號" type="" type-id="" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a986ee9980aec4f9ebd4cfa927140a6a9708" cid="ELEM024" name="申請日期" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="af5749d09aa9d43c2a55a428e38d8b4ad21" cid="ELEM025" name="申請單位" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a5f27fc56a0074ebea8d7a555c8a3a24c615" cid="ELEM053" name="申請聯絡人" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a9a0d98c1b0904f179f54509728786b4b951" cid="ELEM054" name="申請單位主管" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="a6c57ea9bdb594fc8bee819180a8a11df79" cid="ELEM055" name="地址" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="aecc465fa53d44113a37261ed7c694d2e519" cid="ELEM056" name="電話" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
-              <attribute uid="ad2cd75e1f3734f4c97607da3d2dc935963" cid="ELEM057" name="e-mail" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
+              <attribute uid="af5749d09aa9d43c2a55a428e38d8b4ad21" cid="ELEM025" name="申請單位" type="" type-id="" type-size="" foreign-key="true" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a806f06aac2084e95aaa8a84d487f4379253" cid="ELEM009" name="申請項目" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="acdff4fdc2fb045aa9ea152ff62665efa482" cid="ELEM035" name="參與人數" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="acc8920fcef4543aead5e5b40f1c64d20686" cid="ELEM011" name="錄音錄影" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
@@ -1086,14 +1081,24 @@
               </attribute-pairs>
             </erd-relation>
           </item>
-          <item id="0f50bdc718f0418cb12eeddf2488ed98" cid="ENT024" type="erd-entity" name="Entity21" style-class="" visibility="package" change-tracking-state="added" creation-date="06/30/2020 16:59:37">
+          <item id="0f50bdc718f0418cb12eeddf2488ed98" cid="ENT024" type="erd-entity" name="申請人" style-class="" visibility="package" change-tracking-state="added" creation-date="06/30/2020 16:59:37">
             <entity description="" />
             <attributes>
-              <attribute uid="a4ba2f2655baf4c99a9c30193367cd79f627" cid="ELEM085" name="申請單位" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
+              <attribute uid="a4ba2f2655baf4c99a9c30193367cd79f627" cid="ELEM085" name="申請單位" type="" type-id="" type-size="" foreign-key="false" primary-key="true" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a0f3b53dc70e4410890d740e17e5c15c2352" cid="ELEM086" name="申請聯絡人" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
               <attribute uid="a7bc7c52d02a7421996803c750b91e0a0446" cid="ELEM087" name="申請單位主管" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
+              <attribute uid="a6c57ea9bdb594fc8bee819180a8a11df79" cid="ELEM055" name="地址" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
+              <attribute uid="aecc465fa53d44113a37261ed7c694d2e519" cid="ELEM056" name="電話" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
+              <attribute uid="ad2cd75e1f3734f4c97607da3d2dc935963" cid="ELEM057" name="e-mail" type="" type-id="" type-size="" foreign-key="false" primary-key="false" nullable="false" description="" default-value="" auto-increment="false" />
             </attributes>
             <indexes />
+          </item>
+          <item id="be4465837eaa4799b2d96cb0f66a1dab" cid="REL023" type="erd-relationship" name="" style-class="" visibility="package" change-tracking-state="added" creation-date="06/30/2020 17:02:03" from="0f50bdc718f0418cb12eeddf2488ed98" to="di121bd9a8c69f4d29b9890a07709dbdaf1120">
+            <erd-relation type="Identifying" multiplicity-from="1" multiplicity-to="*">
+              <attribute-pairs>
+                <attribute-pair from-attribute="" to-attribute="" />
+              </attribute-pairs>
+            </erd-relation>
           </item>
         </abstract-items>
         <layer id="1d95d2eec7674bc492c0b8bb19e1cdee" name="Default" visible="true" enabled="true" locked="false">
@@ -1102,11 +1107,11 @@
             <erd-entity show-nullability="true" />
           </item>
           <item id="di121bd9a8c69f4d29b9890a07709dbdaf1120" iid="ca992b4a561c4a18a896151fc62ee53f" anchor="None" creation-date="06/20/2020 14:03:30" order-index="1" type="entity">
-            <layout ax="240" ay="2" awidth="243" aheight="367" x="240" y="2" width="243" height="367" />
+            <layout ax="240" ay="35" awidth="243" aheight="334" x="240" y="35" width="243" height="334" />
             <erd-entity show-nullability="true" />
           </item>
           <item id="43abb20e8c534dbca5ec70acc509a69b" iid="30a7908176984c29992c61406493b2fd" creation-date="06/30/2020 16:59:14" order-index="3" type="relation">
-            <layout start-role-position="25,15" end-role-position="25,-15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="483" y1="305" x2="597" y2="305" start-border-pos="0.456403270363808" end-border-pos="0.875" name-position="0,0">
+            <layout start-role-position="25,15" end-role-position="25,-15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="483" y1="305" x2="597" y2="305" start-border-pos="0.452095806598663" end-border-pos="0.875" name-position="0,0">
               <points>
                 <point x="483" y="305" />
                 <point x="597" y="305" />
@@ -1115,8 +1120,17 @@
             <relation from="di121bd9a8c69f4d29b9890a07709dbdaf1120" from-iid="ca992b4a561c4a18a896151fc62ee53f" from-field="af31a4badfcb2417db422023bd7371d6345" to="b2c309d213ab40b994d626d1fed27b16" to-iid="c2b62235fec344f9bea8143d84953526" to-field="af31a4badfcb2417db422023bd7371d6345" />
           </item>
           <item id="0f50bdc718f0418cb12eeddf2488ed98" iid="650744cb2962470f84df839bdebb1fb5" anchor="None" creation-date="06/30/2020 16:59:37" order-index="4" type="entity">
-            <layout ax="597" ay="2" awidth="243" aheight="162" x="597" y="2" width="243" height="162" />
+            <layout ax="597" ay="35" awidth="243" aheight="162" x="597" y="35" width="243" height="162" />
             <erd-entity show-nullability="true" />
+          </item>
+          <item id="be4465837eaa4799b2d96cb0f66a1dab" iid="0ba17a4bbb0e4496be557e55b9755841" creation-date="06/30/2020 17:02:03" order-index="5" type="relation">
+            <layout start-role-position="25,15" end-role-position="25,-15" line-style="oblique" lock-start-point="true" lock-end-point="true" lock-to-fields="false" auto-path="" x1="597" y1="116" x2="483" y2="116" start-border-pos="0.875" end-border-pos="0.310628741979599" name-position="0,0">
+              <points>
+                <point x="597" y="116" />
+                <point x="483" y="116" />
+              </points>
+            </layout>
+            <relation from="0f50bdc718f0418cb12eeddf2488ed98" from-iid="650744cb2962470f84df839bdebb1fb5" to="di121bd9a8c69f4d29b9890a07709dbdaf1120" to-iid="ca992b4a561c4a18a896151fc62ee53f" />
           </item>
         </layer>
       </diagram>
