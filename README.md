@@ -4,7 +4,7 @@
 <h2>建設Apache環境:</h2>
 <h3>步驟一</h3>
 
-* 下載Apache24，將資料夾放入C:槽，舉例 `C:\Program Files
+* 下載Apache24，將資料夾放入C:槽，舉例 `C:\Program Files`
 * 我的電腦(右鍵)→內容→進階系統設定→環境變數
 * 新增系統變數中PATH的路徑，舉例`C:\Program Files\Apache24\bin`，使用者應給予相對應之路徑
 
