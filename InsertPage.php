@@ -1,5 +1,8 @@
 <?php
-    header("Content-Type:text/html; charset=utf-8");
+
+use function PHPSTORM_META\type;
+
+header("Content-Type:text/html; charset=utf-8");
 ?>
 
 <html>
@@ -94,23 +97,24 @@ function time_compar($dat1, $dat2){
 
 function chk_rep_time($t1, $t2){
     // ToDo:SQL查詢是
-    $sql="SELECT * FROM dbo.Applicant";
+    $sql="SELECT * FROM dbo.Ordering";
     $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
 }
 
-function chk_priori($A, $B){
+function chk_priori($dat){
     static $count = false;
     // ToDo:檢查A早於B
     // 未完成
 }
 
-function isEmpty($chk_A, $chk_B)
+function isEmpty($chk_A, $chk_B) {
+    // check if both of array are not empty 
     if(empty($chk_A)){
         echo"未填入裝台排練資料";
-        exit();
+        $flag=false;
     }elseif(empty($chk_B)){
         echo"未填入演出資料";
-        exit();
+        $flag=false;
     }
 }
 
@@ -331,9 +335,7 @@ else{
 // $quer=sqlsrv_query($conn, $constraintSrt) or die("sql error".sqlsrv_errors());
 
 
-$serverName = "DESKTOP-PGTDFJ7";
-$connectionInfo = array( "Database"=>"FinalProject", "UID"=>"andywang", "PWD"=>"andy0212", "CharacterSet" => "UTF-8");
-$conn=sqlsrv_connect($serverName,$connectionInfo);
+include("connection.php");
     
 // --------------------
 // 申請單位資料 Applicant
@@ -352,9 +354,8 @@ $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
 // 預約資訊 Ordering
 //--------------------
 $aplyDate=(string)$_POST['applyDate'];
-$facility=(string)$_POST['facility'];
 $aplyfor=(string)$_POST['aplyfor'];
-$participant=(string)$_POST['participant'];
+$participant=$_POST['participant'];
 $record=(string)$_POST['record'];
 $stageTear=(string)$_POST['clstmeStart'].'-'.(string)$_POST['clstmeEnd'];
 // $stageTear=(string)$_POST['clstmeStart'];
@@ -368,9 +369,9 @@ $returnAcc=(string)$_POST['returnAcc'];
 $accName=(string)$_POST['accName'];
 
 // $sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId) VALUES('aplyDate','appl','facility','aplyfor','participant','record','stageTear','actContent','attachment','receipt','taxId')";
-$sql="INSERT INTO dbo.Ordering(aplyDate,applicant,facility,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId,returnBank,returnBranch,returnAcc,accName) 
-VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);SELECT IDENT_CURRENT('dbo.Ordering')";
-$params=array($aplyDate,$applicant,$facility,$aplyfor,$participant,$record,$stageTear,$actContent,$attachment,$receipt,$taxId,$returnBank,$returnBranch,$returnAcc,$accName);
+$sql="INSERT INTO dbo.Ordering(aplyDate,applicant,aplyfor,participant,record,stageTear,actContent,attachment,receipt,taxId,returnBank,returnBranch,returnAcc,accName) 
+VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?);SELECT IDENT_CURRENT('dbo.Ordering')";
+$params=array($aplyDate,$applicant,$aplyfor,$participant,$record,$stageTear,$actContent,$attachment,$receipt,$taxId,$returnBank,$returnBranch,$returnAcc,$accName);
 $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
 // OK
 // --------------------
@@ -392,6 +393,7 @@ function lastId($queryID) {
 $lastID=(string)lastId($quer);
 echo $lastID;
     
+$facility=(string)$_POST['facility'];
 
 for($i=1;$i<=3;$i++){
     $d='dat'.(string)$i;
@@ -402,14 +404,14 @@ for($i=1;$i<=3;$i++){
 
         foreach($rentTimeA as $val){
             $val=(string)$val;
-            $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime,O_Id) VALUES(?,?,?,?);";
-            $params=array($tmp,'Rehearsal',$val,$lastID);
+            $sql="INSERT INTO dbo.Rentaltime(facility, rentDate,rehearsalShow,rentTime,O_Id) VALUES(?,?,?,?,?);";
+            $params=array($facility, $tmp,'Rehearsal',$val,$lastID);
             $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
         }
         foreach($rentTimeB as $val){
             $val=(string)$val;
-            $sql="INSERT INTO dbo.Rentaltime(rentDate,rehearsalShow,rentTime,O_Id) VALUES(?,?,?,?);";
-            $params=array($tmp,'Show',$val,$lastID);
+            $sql="INSERT INTO dbo.Rentaltime(facility,rentDate,rehearsalShow,rentTime,O_Id) VALUES(?,?,?,?,?);";
+            $params=array($facility, $tmp,'Show',$val,$lastID);
             $quer=sqlsrv_query($conn, $sql,$params) or die("sql error".sqlsrv_errors());
         }
     }

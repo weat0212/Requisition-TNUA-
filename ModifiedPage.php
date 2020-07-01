@@ -46,9 +46,7 @@ else{
         exit();
     }
     else{
-        $serverName = "DESKTOP-PGTDFJ7";
-        $connectionInfo = array( "Database"=>"FinalProject", "UID"=>"andywang", "PWD"=>"andy0212", "CharacterSet" => "UTF-8");
-        $conn=sqlsrv_connect($serverName,$connectionInfo);
+        include("connection.php");
         
         $aplyDate=(string)$_POST['aplyDate'];
         $applicant=(string)$_POST['applicant'];

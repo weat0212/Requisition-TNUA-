@@ -6,21 +6,20 @@ CREATE TABLE Applicant(
 	aplySupv nvarchar(30),
 	address  nvarchar(50),
 	phone  nvarchar(30),
-	email  nvarchar(30),
+	email  nvarchar(50),
 	PRIMARY KEY(applicant)
 )
 
 CREATE TABLE Ordering(
 	O_Id INT IDENTITY  PRIMARY KEY , 
-	aplyDate  nvarchar(30),
+	aplyDate nvarchar(30),
 	applicant  nvarchar(30) REFERENCES Applicant(applicant),
-	facility  nvarchar(50),
-	aplyfor  nvarchar(100),
-	participant  nvarchar(30),
-	record  nvarchar(30),
-	stageTear   nvarchar(100),
+	aplyfor  nvarchar(30),
+	participant  INT,
+	record  nvarchar(10),
+	stageTear   nvarchar(50),
 	actContent  nvarchar(150),
-	attachment  nvarchar(100),
+	attachment  nvarchar(30),
 	receipt nvarchar(30),
 	taxId nvarchar(30),
 	returnBank nvarchar(50),
@@ -30,12 +29,16 @@ CREATE TABLE Ordering(
 )
 
 CREATE TABLE Rentaltime(
+	facility  nvarchar(10),	
 	rentDate   nvarchar(30),
 	rehearsalShow nvarchar(30),
-	rentTime nvarchar(30),/*ª›¿À¨ddate*/
-	O_Id INT REFERENCES Ordering(O_Id),
-	PRIMARY KEY (rentDate, rehearsalShow,rentTime)
+	rentTime nvarchar(30), 
+	O_Id INT,
+	PRIMARY KEY (facility,rentDate, rehearsalShow,rentTime)
 )
+
+ALTER TABLE Rentaltime
+ADD FOREIGN KEY (O_Id) REFERENCES Ordering (O_Id);
 
 
 
