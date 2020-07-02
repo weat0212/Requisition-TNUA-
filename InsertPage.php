@@ -169,7 +169,7 @@ if(empty($_POST['dat1']) and empty($_POST['dat2']) and empty($_POST['dat3'])){
                 foreach($d3A as $val){
                     echo $val.' ';
                 }
-                echo '</br>'."演出時段：";
+                echo ' / '."演出時段：";
                 foreach($d3B as $val){
                     echo $val.' ';
                 }

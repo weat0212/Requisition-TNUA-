@@ -68,7 +68,6 @@ else{
             $O_Id=$row['O_Id'];
 
             echo '<li>'.'申請日期：'.$row['aplyDate'].'</li>';
-            echo '<li>'.'申請場地：'.$row['facility'].'</li>';
             echo '<li>'.'申請項目：'.$row['aplyfor'].'</li>';
             echo '<li>'.'參與人數：'.$row['participant'].'</li>';
             echo '<li>'.'錄音錄影：'.$row['record'].'</li>';
@@ -87,8 +86,10 @@ else{
         $sql="SELECT * FROM dbo.Rentaltime WHERE O_Id='$O_Id'";
         $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
         
+        echo '<ul>';
         while($row=sqlsrv_fetch_array($quer)){
             echo '</br>';
+            echo '<li>'.'申請場地：'.$row['facility'].'</li>';
             echo '<li>'.'租借日期：'.$row['rentDate'].'</li>';
             echo '<li>'.'裝台排練/演出：'.toText($row['rehearsalShow']).'</li>';
             echo '<li>'.'租借時間：'.$row['rentTime'].'</li>';

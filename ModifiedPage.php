@@ -55,7 +55,6 @@ else{
         $contact=(string)$_POST['contact'];
         $phone=(string)$_POST['phone'];
         $email=(string)$_POST['email']; //
-        $facility=(string)$_POST['facility'];
         $participant=(string)$_POST['participant']; //
         $aplyfor=(string)$_POST['aplyfor'];
         $record=(string)$_POST['record'];

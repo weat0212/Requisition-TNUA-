@@ -85,7 +85,6 @@ $quer=sqlsrv_query($conn, $sql) or die("sql error".sqlsrv_errors());
 
 while($row=sqlsrv_fetch_array($quer)){
 $O_Id=$row['O_Id'];
-$facility=$row['facility'];
 $participant=$row['participant'];
 $aplyfor=$row['aplyfor'];
 $record=$row['record'];
@@ -101,8 +100,8 @@ $accName=$row['accName'];
 
 print <<<EOT
         <li>
-            （1）申請場地：<input type="hidden" name="facility" value=$facility>$facility ，參與共 <input type="hidden" name="participant" value='$participant'>$participant 人
-        </li>
+            （1）參與人數 <input type="hidden" name="participant" value='$participant'>$participant 人
+        </li>        
         <li>
             （2）申請項目：<input type="hidden" name="aplyfor" value=$aplyfor>$aplyfor
         </li>
@@ -141,7 +140,11 @@ while($row=sqlsrv_fetch_array($quer)){
     $rentDate=$row['rentDate'];
     $rehearsalShow=$row['rehearsalShow'];
     $rentTime=$row['rentTime'];
+    $facility=$row['facility'];
 print <<<EOT
+<li>
+    申請場地：$facility
+</li>
 <li>
     租借日期：$rentDate
 </li>
