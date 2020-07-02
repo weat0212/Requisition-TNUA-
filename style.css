@@ -484,6 +484,13 @@ input{
 	line-height:1.6em;
 }
 
+.red{
+	color: red;
+}
+
+.green{
+	color: green;
+}
 
 #main {
 	position: relative;
@@ -491,8 +498,6 @@ input{
 	padding: 20px;
 	background-color: #B5A99D;
 	color: #FFFFFF;
-	
-
 }
 
 #main h2 {

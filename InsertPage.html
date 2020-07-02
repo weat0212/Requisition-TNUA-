@@ -61,7 +61,8 @@
                     <div>
                         申請聯絡人：<input type="text" name="contact" size="30"/><br/><br/>
                         地址：&emsp;&emsp;&emsp;<input type="text" name="address" size="30"/><br/><br/>
-                        電話：&emsp;&emsp;&emsp;<input type="text" name="phone" size="30" minlength="9" maxlength="10"/><br/><br/>
+                        <!-- Todo:bugfix color change fail -->
+                        電話：&emsp;&emsp;&emsp;<input type="text" name="phone" id='phone' size="30" minlength="9" maxlength="10" class="red"/><br/><br/>
                         E-mail：&nbsp;&nbsp;&emsp;<input type="email" name="mail" size="30"/><br/><br/>
                     </div>
                     </li>
@@ -198,6 +199,6 @@
     <p>112 台北市北投區學園路一號 國立台北藝術大學 展演藝術中心</p>
     <p>Tel:(02)2893-8163</p>
 </footer>
-
+<script src="ReqRegex.js"></script>
 </body>
 </html>
