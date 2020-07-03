@@ -21,6 +21,7 @@
 <h3>步驟三</h3>
 * 我的電腦(右鍵)→管理→服務→apache24(右鍵啟動)
 * 到瀏覽器中打127.0.0.1若有出現Apach頁面則成功安裝!
+</br>
 
 <h2>建設php環境:</h2>
 <h3>步驟一</h3>
@@ -53,4 +54,28 @@ LoadModule php7_module "C:/php/php7apache2_4.dll"
  AddType application/x-httpd-php php
 </IfModule>
 ```
+
+* 新增一個txt檔於apache24\htdocs中，並重新命名為info.php，文字編輯存入以下指令:
+
+```
+<?php 
+phpinfo(); 
+?>
+```
+* 打開 https://127.0.0.1/info.php 若出現php資訊頁面則成功安裝
+
+
+<h2> MSSQL 設置 </h2>
+
+* 根據php版本下載 Microsoft Drivers for PHP for SQL Server
+https://docs.microsoft.com/zh-tw/sql/connect/php/download-drivers-php-sql-server?view=sql-server-ver15
+
+* 執行後依版本選定資料夾中兩檔案(72為版本編號，ts為thread版；nts為non-thread版):
+  * php_pdo_sqlsrv_72_ts_x64.dll
+  * php_sqlsrv_72_ts_x64.dll
+* 將兩檔案放到 php\ext 路徑位置中，並打開php.ini檔，最後新增指令:
+  * extension=php_sqlsrv_72_ts_x64.dll
+  * extension=php_pdo_sqlsrv_72_ts_x64.dll
+* 重啟apache後，於網頁打開php資訊，若有 pdo_sqlsrv 欄則成功
+
 
