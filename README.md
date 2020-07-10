@@ -79,6 +79,7 @@ https://docs.microsoft.com/zh-tw/sql/connect/php/download-drivers-php-sql-server
 * 重啟apache後，於網頁打開php資訊，若有 pdo_sqlsrv 欄則成功
 
 <h2> MSSQL 權限驗證設置 </h2>
+
 * 於SQL Server Management伺服器中，安全性→登入→新增登入
   * 點選SQL Server驗證，建立一組帳號密碼
   * 點選伺服器角色(全選)
