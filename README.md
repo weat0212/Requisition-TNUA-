@@ -78,4 +78,12 @@ https://docs.microsoft.com/zh-tw/sql/connect/php/download-drivers-php-sql-server
   * extension=php_pdo_sqlsrv_72_ts_x64.dll
 * 重啟apache後，於網頁打開php資訊，若有 pdo_sqlsrv 欄則成功
 
-
+<h2> MSSQL 權限驗證設置 </h2>
+* 於SQL Server Management伺服器中，安全性→登入→新增登入
+  * 點選SQL Server驗證，建立一組帳號密碼
+  * 點選伺服器角色(全選)
+  * 使用者對應→已對應到此登入的使用者(全選)，資料庫角色成員資格對象(db_owner選取)
+* 伺服器(右鍵)→屬性→安全性→伺服器驗證→點選SQL Server 及 Windows 驗證模式
+* 重新啟動SQL Server Management
+  * 點選SQL Server驗證→輸入先前新增的帳號密碼→連線
+  * 注意:若出現帳號密碼錯誤，利用windows驗證先登入，再行修改帳號密碼
