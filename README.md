@@ -88,3 +88,5 @@ https://docs.microsoft.com/zh-tw/sql/connect/php/download-drivers-php-sql-server
 * 重新啟動SQL Server Management
   * 點選SQL Server驗證→輸入先前新增的帳號密碼→連線
   * 注意:若出現帳號密碼錯誤，利用windows驗證先登入，再行修改帳號密碼
+
+![image](https://github.com/weat0212/Web-Requisition-TNUA-/blob/master/1.png)
